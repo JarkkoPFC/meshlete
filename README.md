@@ -4,7 +4,7 @@
 
 Meshlete is a Windows command line tool which converts 3D models to meshlet-based 3D models. I developed the tool originally for my tiled software rasterizer and Arduino graphics library ([video]( https://www.youtube.com/watch?v=Xs_5Sv9oBtk)) hobby project, but it can be useful for other applications as well, e.g. DX12-based modern renderers using mesh shaders.
 
-Meshlets are small chunks of 3D geometry consisting some small number of vertices and triangles. Below is an image of a 3D model from Blender called ìSuzanneî which is split to meshlets of max 64 vertices in each (**-mv 64**) and visualized with different colors. Splitting the geometry processing to meshlets instead of processing the mesh as a whole has various benefits and has better fit with batch-based geometry processing (vs post-transform cache model) in modern GPU architectures as well.
+Meshlets are small chunks of 3D geometry consisting some small number of vertices and triangles. Below is an image of a 3D model from Blender called ‚ÄúSuzanne‚Äù which is split to meshlets of max 64 vertices in each (**-mv 64**) and visualized with different colors. Splitting the geometry processing to meshlets instead of processing the mesh as a whole has various benefits and has better fit with batch-based geometry processing (vs post-transform cache model) in modern GPU architectures as well.
 
 <p align="center">
   <img src="doc/images/suzanne_meshlets.jpg">
@@ -12,7 +12,7 @@ Meshlets are small chunks of 3D geometry consisting some small number of vertice
 
 The tool outputs the generated data in *p3g* file format that was developed to be Arduino-friendly and to enable rendering 3D models straight from read-only memory without need for run-time data processing. The format is quite straight forward and documented in **doc/file_format_p3g.xlsx** if you want to parse it. The tool also supports debug output to Collada (dae) file format to visualize the generated meshlets e.g. in [Blender](https://www.blender.org). The input 3D model can be in *dae*, *obj*, *fbx*, *lwo* or *3ds* file formats, but be aware that the format parsing can be a bit flaky so try different format if you have problems with one.
 
-For the generated *p3g* file the tool supports custom vertex formats, which are defined in **bin/vfmt.xml** file, so you can define for example multiple UVís, color channels, custom data layout and packing using expressions. There are some predefined formats in the file, but you can add more or define your own vertex format config file (use with **-vc** argument). When running the tool the used vertex format is defined with **-vf** argument followed by the name of the format in the config.
+For the generated *p3g* file the tool supports custom vertex formats, which are defined in **bin/vfmt.xml** file, so you can define for example multiple UV‚Äôs, color channels, custom data layout and packing using expressions. There are some predefined formats in the file, but you can add more or define your own vertex format config file (use with **-vc** argument). When running the tool the used vertex format is defined with **-vf** argument followed by the name of the format in the config.
 
 An example to split the Suzanne model to meshlets with bounding spheres and visibility cones and 10 bytes/vertex format (packed position+normal):
 ```
@@ -24,9 +24,13 @@ Or to output debug 3D object to view in Blender with bounding spheres and visibi
 ```
 
 # Meshlet Bounding Spheres and Visibility Cones
-The tool can calculate bounding spheres (**-mb** and **-db** options) and visibility cones (**-mc** and **-dc** options) for the generated meshlets to help cull away geometry that doesnít contribute to the final image for given camera view at run-time. The meshlet culling is more fine grained than classic object-level culling and can be done cheaply prior to any meshlet vertex processing thus improving the rendering performance. The storage requirements in *p3g* file for this culling data are quite small: 32 bits / meshlet for the bounding spheres and 32 bits / meshlet for the cones.
+The tool can calculate bounding spheres (**-mb** and **-db** options) and visibility cones (**-mc** and **-dc** options) for the generated meshlets to help cull away geometry that doesn‚Äôt contribute to the final image for given camera view at run-time. The meshlet culling is more fine grained than classic object-level culling and can be done cheaply prior to any meshlet vertex processing thus improving the rendering performance. The storage requirements in *p3g* file for this culling data are quite small: 32 bits / meshlet for the bounding spheres and 32 bits / meshlet for the cones.
 
-For example if the meshlet bounding sphere is outside given camera FOV, the meshlet geometry processing can be entirely skipped. The spheres can be also used for occlusion culling, i.e. if the sphere is further than previously rasterized depth values, the meshlet processing can be skipped. In my tiled software rasterizer the bounding spheres are tested against rasterized hi-z for fast occlusion culling. Furthermore, Iím also using the screen extents of the spheres to classify meshlets to tiles so having tight meshlet bounds reduces vertex processing and triangle setup cost.
+For example if the meshlet bounding sphere is outside given camera FOV, the meshlet geometry processing can be entirely skipped. The spheres can be also used for occlusion culling, i.e. if the sphere is further than previously rasterized depth values, the meshlet processing can be skipped as shown in the video below. In my tiled software rasterizer the bounding spheres are tested against rasterized hi-z for fast occlusion culling. Furthermore, I‚Äôm also using the screen extents of the spheres to classify meshlets to tiles so having tight meshlet bounds reduces vertex processing and triangle setup cost.
+
+<figure class="video_container">
+  <iframe src="https://www.youtube.com/embed/B-2ABFcQLz0" frameborder="0" allowfullscreen="true" />
+</figure>
 
 The image below shows the yellow bounding spheres of meshlets for the Suzanne 3D model. For the tool you can use command line option **-db** to output the bounding spheres to the debug mesh file defined with **-do**.
 
