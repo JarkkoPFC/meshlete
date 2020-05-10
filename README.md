@@ -28,9 +28,7 @@ The tool can calculate bounding spheres (**-mb** and **-db** options) and visibi
 
 For example if the meshlet bounding sphere is outside given camera FOV, the meshlet geometry processing can be entirely skipped. The spheres can be also used for occlusion culling, i.e. if the sphere is further than previously rasterized depth values, the meshlet processing can be skipped as shown in the video below. In my tiled software rasterizer the bounding spheres are tested against rasterized hi-z for fast occlusion culling. Furthermore, I’m also using the screen extents of the spheres to classify meshlets to tiles so having tight meshlet bounds reduces vertex processing and triangle setup cost.
 
-<figure class="video_container">
-  <iframe src="https://www.youtube.com/embed/B-2ABFcQLz0" frameborder="0" allowfullscreen="true" />
-</figure>
+[![Meshlet Hi-Z Occlusion Culling](https://img.youtube.com/vi/B-2ABFcQLz0/0.jpg)](http://www.youtube.com/watch?v=B-2ABFcQLz0)
 
 The image below shows the yellow bounding spheres of meshlets for the Suzanne 3D model. For the tool you can use command line option **-db** to output the bounding spheres to the debug mesh file defined with **-do**.
 
