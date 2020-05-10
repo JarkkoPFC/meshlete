@@ -1,0 +1,127 @@
+<!--
+  input data streams:
+    pos       : position vec3f[x, y, z]
+    uv[n]     : uv coordinates vec2f[x, y]
+    normal    : vertex normal vec3f[x, y, z]
+    tangent   : targent vec3f[x, y, z]
+    binormal  : binormal vec3f[x, y, z]
+    color[n]  : color vec4f[r, g, b, a]
+    qframe    : quaternion tangent frame vec4f[quat_vec={x, y, z}, mirror=0/1]
+  input constants:
+    mesh_bvol_pos : mesh bounding volume position vec3f[x, y, z]
+    mesh_bvol_rad : mesh bounding volume radius
+-->
+
+<vertex_formats>
+  <format id="1" name="p">
+    <!-- position -->
+    <element type="float32" expr="pos.x" />
+    <element type="float32" expr="pos.y" />
+    <element type="float32" expr="pos.z" />
+  </format>
+
+  <format id="2" name="pn">
+    <!-- position -->
+    <element type="float32" expr="pos.x" />
+    <element type="float32" expr="pos.y" />
+    <element type="float32" expr="pos.z" />
+    <!-- normal -->
+    <element type="float32" expr="normal.x" />
+    <element type="float32" expr="normal.y" />
+    <element type="float32" expr="normal.z" />
+  </format>
+
+  <format id="3" name="pq">
+    <!-- position -->
+    <element type="float32" expr="pos.x" />
+    <element type="float32" expr="pos.y" />
+    <element type="float32" expr="pos.z" />
+    <!-- quaternion tangent frame -->
+    <element type="float32" expr="qframe.x+(qframe.w?0:2)" />
+    <element type="float32" expr="qframe.y" />
+    <element type="float32" expr="qframe.z" />
+  </format>
+
+  <format id="4" name="pnu">
+    <!-- position -->
+    <element type="float32" expr="pos.x" />
+    <element type="float32" expr="pos.y" />
+    <element type="float32" expr="pos.z" />
+    <!-- normal -->
+    <element type="float32" expr="normal.x" />
+    <element type="float32" expr="normal.y" />
+    <element type="float32" expr="normal.z" />
+    <!-- uv -->
+    <element type="float32" expr="uv.x" />
+    <element type="float32" expr="uv.y" />
+  </format>
+
+  <format id="5" name="pqu">
+    <!-- position -->
+    <element type="float32" expr="pos.x" />
+    <element type="float32" expr="pos.y" />
+    <element type="float32" expr="pos.z" />
+    <!-- quaternion tangent frame -->
+    <element type="float32" expr="qframe.x+(qframe.w?0:2)" />
+    <element type="float32" expr="qframe.y" />
+    <element type="float32" expr="qframe.z" />
+    <!-- uv -->
+    <element type="float32" expr="uv.x" />
+    <element type="float32" expr="uv.y" />
+  </format>
+
+  <format id="6" name="pack_p">
+    <!-- position -->
+    <element type="int16" expr="32767.5*(pos.x-mesh_bvol_pos.x)/mesh_bvol_rad" />
+    <element type="int16" expr="32767.5*(pos.y-mesh_bvol_pos.y)/mesh_bvol_rad" />
+    <element type="int16" expr="32767.5*(pos.z-mesh_bvol_pos.z)/mesh_bvol_rad" />
+  </format>
+
+  <format id="7" name="pack_pn">
+    <!-- position -->
+    <element type="int16" expr="32767.5*(pos.x-mesh_bvol_pos.x)/mesh_bvol_rad" />
+    <element type="int16" expr="32767.5*(pos.y-mesh_bvol_pos.y)/mesh_bvol_rad" />
+    <element type="int16" expr="32767.5*(pos.z-mesh_bvol_pos.z)/mesh_bvol_rad" />
+    <!-- normal -->
+    <element type="int8" expr="normal.x*127.5" />
+    <element type="int8" expr="normal.y*127.5" />
+    <element type="int8" expr="normal.z*127.5" />
+    <element type="int8" expr="0" />
+  </format>
+
+  <format id="8" name="pack_pq">
+    <!-- position -->
+    <element type="int16" expr="32767.5*(pos.x-mesh_bvol_pos.x)/mesh_bvol_rad" />
+    <element type="int16" expr="32767.5*(pos.y-mesh_bvol_pos.y)/mesh_bvol_rad" />
+    <element type="int16" expr="32767.5*(pos.z-mesh_bvol_pos.z)/mesh_bvol_rad" />
+    <!-- quaternion tangent frame -->
+    <element type="uint32" expr="int(qframe.w)&lt;&lt;31|(int(round(qframe.x*511.0))&amp;1023)&lt;&lt;21|(int(round(qframe.y*511.0))&amp;1023)&lt;&lt;11|int(round(qframe.z*1023.0))&amp;2047" />
+  </format>
+
+  <format id="9" name="pack_pnu">
+    <!-- position -->
+    <element type="int16" expr="32767.5*(pos.x-mesh_bvol_pos.x)/mesh_bvol_rad" />
+    <element type="int16" expr="32767.5*(pos.y-mesh_bvol_pos.y)/mesh_bvol_rad" />
+    <element type="int16" expr="32767.5*(pos.z-mesh_bvol_pos.z)/mesh_bvol_rad" />
+    <!-- normal -->
+    <element type="int8" expr="normal.x*127.5" />
+    <element type="int8" expr="normal.y*127.5" />
+    <element type="int8" expr="normal.z*127.5" />
+    <element type="int8" expr="0" />
+    <!-- uv -->
+    <element type="int16" expr="2048*uv.x" />
+    <element type="int16" expr="2048*uv.y" />
+  </format>
+
+  <format id="10" name="pack_pqu">
+    <!-- position -->
+    <element type="int16" expr="32767.5*(pos.x-mesh_bvol_pos.x)/mesh_bvol_rad" />
+    <element type="int16" expr="32767.5*(pos.y-mesh_bvol_pos.y)/mesh_bvol_rad" />
+    <element type="int16" expr="32767.5*(pos.z-mesh_bvol_pos.z)/mesh_bvol_rad" />
+    <!-- quaternion tangent frame -->
+    <element type="uint32" expr="int(qframe.w)&lt;&lt;31|(int(round(qframe.x*511.0))&amp;1023)&lt;&lt;21|(int(round(qframe.y*511.0))&amp;1023)&lt;&lt;11|int(round(qframe.z*1023.0))&amp;2047" />
+    <!-- uv -->
+    <element type="int16" expr="2048*uv.x" />
+    <element type="int16" expr="2048*uv.y" />
+  </format>
+</vertex_formats>
