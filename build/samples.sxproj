@@ -1,0 +1,27 @@
+<Project ProjectName="samples"
+         OutputFile="@(ProjectName)_@(PlatformName)_@(BuildName)"
+         OutputFileExt="@(ExeExt)"
+         OutputDirectory="../../bin"
+         IntermediateDirectory="../../_intermediate/@(PlatformName)_@(CompilerName)/@(BuildName)/@(ProjectName)"
+         IncludeDirectories="../../src"
+         LinkLibraries="../../lib/@(PlatformName)_@(CompilerName)/meshlete_@(BuildName)@(LibExt) @(LinkLibraries)"
+         VSProjectGUID="F31E2A4C-18E6-4909-BB6C-F215335692D7"
+         VSSubSystem="@(VSSubSystem_Console)" >
+
+  <Builds>
+    <Build BuildName="debug" />
+    <Build BuildName="release" />
+    <Build BuildName="retail" />
+  </Builds>
+
+  <Platforms>
+    <Platform PlatformName="win32" />
+    <Platform PlatformName="win64" />
+  </Platforms>
+
+  <Configurations TemplateFile="@(PlatformName)/@(ProjectConfigName)_@(BuildName)_exe" />
+
+  <FileConfigs RootDir="../samples" ProjFiles="*.cpp *.h *.inl *.inc" >
+    <FileConfig Files="@(ProjFiles)" Recursive="1" />
+  </FileConfigs>
+</Project>
