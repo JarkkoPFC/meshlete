@@ -42,3 +42,7 @@ The image below visualizes the visibility cones for the Suzanne 3D model with th
   <img src="doc/images/suzanne_cones.jpg">
 </p>
 
+
+# License
+
+All the code in this project is licensed under MIT license. See doc/LICENSE for details.
