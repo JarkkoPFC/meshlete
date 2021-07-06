@@ -23,12 +23,12 @@ int main()
   geo.indices=s_3d_model_idx;
   geo.num_vertices=num_vtx;
   geo.num_indices=num_idx;
-  seed_oobox3f sbox=seed_oobox3_discrete((const vec3f*)s_3d_model_pos, num_vtx, discrete_axes3_13);
+  seed_oobox3f sbox=seed_oobox3_discrete((const vec3f*)s_3d_model_pos, num_vtx, discrete_axes3_49);
   geo.bvol=bounding_sphere3_exp((const vec3f*)s_3d_model_pos, num_vtx, sbox, true);
   mesh_geometry_segment mseg;
   mseg.start_tri_idx=0;
   mseg.num_tris=uint32_t(num_idx/3);
-  mseg.sbox=seed_oobox3_discrete((const vec3f*)s_3d_model_pos, mseg.num_tris*3, discrete_axes3_13, geo.indices+mseg.start_tri_idx);
+  mseg.sbox=seed_oobox3_discrete((const vec3f*)s_3d_model_pos, mseg.num_tris*3, discrete_axes3_49, geo.indices+mseg.start_tri_idx);
   mseg.material_id=0;
   geo.segs=&mseg;
   geo.num_segs=1;

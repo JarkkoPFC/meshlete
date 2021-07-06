@@ -28,9 +28,9 @@ namespace
   {
     float rrad=rcp_z(mesh_bvol_.rad);
     vec3f seg_bvol_pos=(seg_bvol_.pos-mesh_bvol_.pos)*(32767.0f*rrad);
-    out_qbvol_pos_[0]=int16_t(round(seg_bvol_pos.x));
-    out_qbvol_pos_[1]=int16_t(round(seg_bvol_pos.y));
-    out_qbvol_pos_[2]=int16_t(round(seg_bvol_pos.z));
+    out_qbvol_pos_[0]=int16_t(clamp(round(seg_bvol_pos.x), -32767.5f, 32767.5f));
+    out_qbvol_pos_[1]=int16_t(clamp(round(seg_bvol_pos.y), -32767.5f, 32767.5f));
+    out_qbvol_pos_[2]=int16_t(clamp(round(seg_bvol_pos.z), -32767.5f, 32767.5f));
     out_qbvol_rad_=uint16_t(min<int>(65535, int(ceil(seg_bvol_.rad*65535.0f*rrad))));
   }
   //----
@@ -39,9 +39,9 @@ namespace
   {
     float rrad=rcp_z(seg_bvol_.rad);
     vec3f mlet_bvol_pos=(mlet_bvol_.pos-seg_bvol_.pos)*(127.0f*rrad);
-    out_qbvol_pos_[0]=int8_t(round(mlet_bvol_pos.x));
-    out_qbvol_pos_[1]=int8_t(round(mlet_bvol_pos.y));
-    out_qbvol_pos_[2]=int8_t(round(mlet_bvol_pos.z));
+    out_qbvol_pos_[0]=int8_t(clamp(round(mlet_bvol_pos.x), -127.5f, 127.5f));
+    out_qbvol_pos_[1]=int8_t(clamp(round(mlet_bvol_pos.y), -127.5f, 127.5f));
+    out_qbvol_pos_[2]=int8_t(clamp(round(mlet_bvol_pos.z), -127.5f, 127.5f));
     out_qbvol_rad_=uint8_t(min<int>(255, int(ceil(mlet_bvol_.rad*255.0f*rrad))));
   }
   //--------------------------------------------------------------------------
@@ -114,15 +114,6 @@ void pfc::dequantize_meshlet_vcone(vec3f &out_dir_, float &out_dot_, const int8_
 //============================================================================
 // generate_meshlets
 //============================================================================
-typedef pair<float, uint32_t> tri_ordinal_t;
-int tri_cmp_func(const void *tri0_, const void *tri1_)
-{
-  const tri_ordinal_t *tri0=(tri_ordinal_t*)tri0_;
-  const tri_ordinal_t *tri1=(tri_ordinal_t*)tri1_;
-  return tri0->first<tri1->first?-1:tri0->first>tri1->first?1:0;
-}
-//----
-
 void pfc::generate_meshlets(const meshlet_gen_cfg &cfg_, const mesh_geometry &mgeo_, p3g_mesh_geometry &p3g_geo_)
 {
   usize_t num_segs=mgeo_.num_segs;
@@ -151,6 +142,7 @@ void pfc::generate_meshlets(const meshlet_gen_cfg &cfg_, const mesh_geometry &mg
       majpr_axis=-majpr_axis;
 
     // sort triangles along the major axis & remove degenerate tris
+    typedef pair<float, uint32_t> tri_ordinal_t;
     array<tri_ordinal_t> tri_order(mgseg.num_tris);
     tri_ordinal_t *tri_order_data=tri_order.data();
     const vec3f *pos_data=mgeo_.vertices;
@@ -169,7 +161,7 @@ void pfc::generate_meshlets(const meshlet_gen_cfg &cfg_, const mesh_geometry &mg
       to.first=min(vp0, vp1, vp2);
       to.second=tidx;
     }
-    qsort(tri_order_data, mgseg.num_tris, sizeof(*tri_order_data), &tri_cmp_func);
+    quick_sort(tri_order_data, mgseg.num_tris);
 
     // assign all triangle to meshlets
     uint32_t num_mlets=0;
@@ -186,7 +178,7 @@ void pfc::generate_meshlets(const meshlet_gen_cfg &cfg_, const mesh_geometry &mg
         // add the first triangle for the meshlet
         mlet_tris[0]=tidx;
         topology.set_tri_cluster(tidx, num_mlets);
-        memcpy(mlet_border_edges, topology.tri_eidx(tidx), sizeof(uint32_t)*3);
+        mem_copy(mlet_border_edges, topology.tri_eidx(tidx), sizeof(uint32_t)*3);
         unsigned num_mlet_tris=1;
         unsigned num_border_edges=3;
         unsigned num_mlet_vtx=3;
@@ -267,7 +259,7 @@ void pfc::generate_meshlets(const meshlet_gen_cfg &cfg_, const mesh_geometry &mg
               // update new vertex count
               num_new_vtx=3;
               bool is_vtx_shared[3]={false};
-              auto pred=[&](uint32_t tidx_, unsigned, unsigned btvidx_)
+              auto pred=[&](uint32_t tidx_, unsigned tvidx_, unsigned btvidx_)
               {
                 if(!is_vtx_shared[btvidx_] && topology.tri_cluster(tidx_)==num_mlets)
                 {
@@ -291,7 +283,7 @@ void pfc::generate_meshlets(const meshlet_gen_cfg &cfg_, const mesh_geometry &mg
           // add the best matching triangle to the meshlet
           mlet_tris[num_mlet_tris++]=best_tidx;
           topology.set_tri_cluster(best_tidx, num_mlets);
-          memcpy(mlet_border_edges+num_border_edges, topology.tri_eidx(best_tidx), sizeof(uint32_t)*3);
+          mem_copy(mlet_border_edges+num_border_edges, topology.tri_eidx(best_tidx), sizeof(uint32_t)*3);
           num_border_edges+=3;
           num_mlet_vtx+=num_new_vtx;
         }
@@ -384,6 +376,8 @@ void pfc::generate_bvols(const mesh_geometry &mgeo_, p3g_mesh_geometry &p3g_geo_
     p3g_mesh_segment &p3g_seg=p3g_geo_.segs[seg_idx];
     const vec3f *mesh_pos_data=mgeo_.vertices;
     sphere3f seg_bvol=bounding_sphere3_exp(mesh_pos_data, p3g_seg.num_vidx, mgseg.sbox, true, p3g_geo_.mlet_vidx.data()+p3g_seg.start_vidx);
+    if(seg_bvol.rad-1.0f/65535.0f>mgeo_.bvol.rad)
+      warnf("Warning: Segment %i bounding volume (%f) is larger than mesh bounding volume (%f)\r\n", seg_idx, seg_bvol.rad, mgeo_.bvol.rad);
     quantize_segment_bvol(p3g_seg.qbvol_pos, p3g_seg.qbvol_rad, seg_bvol, mgeo_.bvol);
     seg_bvol=dequantize_segment_bvol(p3g_seg.qbvol_pos, p3g_seg.qbvol_rad, mgeo_.bvol);
 
@@ -393,8 +387,10 @@ void pfc::generate_bvols(const mesh_geometry &mgeo_, p3g_mesh_geometry &p3g_geo_
     {
       // setup meshlet bounding volume
       p3g_meshlet &mlet=p3g_geo_.mlets[p3g_seg.start_mlet+midx];
-      seed_oobox3f mlet_sbox=seed_oobox3_discrete(mesh_pos_data, mlet.num_vtx, discrete_axes3_13, vtx_idx);
+      seed_oobox3f mlet_sbox=seed_oobox3_discrete(mesh_pos_data, mlet.num_vtx, discrete_axes3_49, vtx_idx);
       sphere3f mlet_bvol=bounding_sphere3_exp(mesh_pos_data, mlet.num_vtx, mlet_sbox, true, vtx_idx);
+      if(mlet_bvol.rad-1.0f/255.0f>seg_bvol.rad)
+        warnf("Warning: Meshlet %i bounding volume (%f) is larger than segment %i bounding volume (%f)\r\n", midx, mlet_bvol.rad, seg_idx, seg_bvol.rad);
       quantize_meshlet_bvol(mlet.qbvol_pos, mlet.qbvol_rad, mlet_bvol, seg_bvol);
       vtx_idx+=mlet.num_vtx;
     }
