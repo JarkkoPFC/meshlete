@@ -45,4 +45,4 @@ The image below visualizes the visibility cones for the Suzanne 3D model with th
 
 # License
 
-All the code in this project is licensed under MIT license. See [LICENSE](LICENSE) for details.
+Meshlete is licensed under MIT license. See [LICENSE](LICENSE) for details.
