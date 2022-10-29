@@ -1,0 +1,1 @@
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='@(BuildName)|@(VSPlatformType)'">true</ExcludedFromBuild>

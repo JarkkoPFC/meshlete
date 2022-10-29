@@ -1,0 +1,3 @@
+      <Command Condition="'$(Configuration)|$(Platform)'=='@(BuildName)|@(VSPlatformType)'">"@(SXPToolsPath)\pfc_cl_compiler.exe" -c -o @(CLTargetPath)/%(Filename).ccl %(FullPath)</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='@(BuildName)|@(VSPlatformType)'">@(CLTargetPath)/%(Filename).ccl</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='@(BuildName)|@(VSPlatformType)'"></Message>

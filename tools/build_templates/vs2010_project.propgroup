@@ -1,0 +1,4 @@
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='@(BuildName)|@(VSPlatformType)'">@(OutputDirectory)/</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='@(BuildName)|@(VSPlatformType)'">@(IntermediateDirectory)/</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='@(BuildName)|@(VSPlatformType)'">@(OutputFile)</TargetName>
+    <OutputFile Condition="'$(Configuration)|$(Platform)'=='@(BuildName)|@(VSPlatformType)'">@(OutputDirectory)/@(OutputFile)@(OutputFileExt)</OutputFile>

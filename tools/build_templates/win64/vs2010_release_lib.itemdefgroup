@@ -1,0 +1,33 @@
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='@(BuildName)|@(VSPlatformType)'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/Oy- @(VSAdditionalOptions)</AdditionalOptions>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>@(IncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>@(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>@(VSMinimalRebuild)</MinimalRebuild>
+      <MultiProcessorCompilation>@(VSMultiProcessorCompilation)</MultiProcessorCompilation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>@(VSUsePrecompiledHeader)</PrecompiledHeader>
+      <PrecompiledHeaderFile>@(PrecompiledHeader)</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>@(IntermediateDirectory)/@(ProjectName)_@(BuildName).pch</PrecompiledHeaderOutputFile>
+      <ProgramDataBaseFileName>@(OutputDirectory)/@(ProjectName)_@(BuildName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>@(VSWarningLevel)</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>@(VSCompileAs)</CompileAs>
+      <DisableSpecificWarnings>@(VSDisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Lib>
+      <OutputFile>@(OutputDirectory)/@(OutputFile)@(OutputFileExt)</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>

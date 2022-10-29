@@ -126,6 +126,11 @@
 #define PFC_COMPILER_STR vs2019
 #define PFC_COMPILER_SRC_STR msvc
 #define PFC_COMPILER_LIB_EXT .lib
+#elif defined(PFC_COMPILER_MSVC2022)
+#define PFC_COMPILER_MSVC
+#define PFC_COMPILER_STR vs2022
+#define PFC_COMPILER_SRC_STR msvc
+#define PFC_COMPILER_LIB_EXT .lib
 #elif defined(PFC_COMPILER_GCC)
 #define PFC_COMPILER_GCC
 #define PFC_COMPILER_STR gcc

@@ -1,0 +1,2 @@
+      <Command Condition="'$(Configuration)|$(Platform)'=='@(BuildName)|@(VSPlatformType)'">"$(CUDA_PATH)\bin\nvcc.exe" -m32 -ccbin "$(VCInstallDir)bin" -c @(CUDACustomParameters) -D_DEBUG -DWIN32 -D_MBCS -D_LIB -Xcompiler /EHsc,/W3,/nologo,/Od,/Zi,/Oi,/RTC1,/MDd,/GF,/Gm,/fp:fast -I"$(CUDA_INC_PATH)" -I./ -o $(IntDir)%(Filename).obj %(FullPath)</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='@(BuildName)|@(VSPlatformType)'">$(IntDir)%(Filename).obj;%(Outputs)</Outputs>

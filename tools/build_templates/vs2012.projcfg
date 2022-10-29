@@ -1,0 +1,4 @@
+    <ProjectConfiguration Include="@(BuildName)|@(VSPlatformType)">
+      <Configuration>@(BuildName)</Configuration>
+      <Platform>@(VSPlatformType)</Platform>
+    </ProjectConfiguration>

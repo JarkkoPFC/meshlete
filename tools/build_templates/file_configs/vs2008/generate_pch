@@ -1,0 +1,8 @@
+<FileConfiguration
+	Name="@(BuildName)|@(VSPlatformType)"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		UsePrecompiledHeader="1"
+	/>
+</FileConfiguration>

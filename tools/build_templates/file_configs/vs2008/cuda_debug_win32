@@ -1,0 +1,9 @@
+<FileConfiguration
+	Name="@(BuildName)|@(VSPlatformType)"
+	>
+	<Tool
+		Name="VCCustomBuildTool"
+		CommandLine="&quot;$(CUDA_PATH)\bin\nvcc.exe&quot; -m32 -ccbin &quot;$(VCInstallDir)bin&quot; -c @(CUDACustomParameters) -D_DEBUG -DWIN32 -D_MBCS -D_LIB -Xcompiler /EHsc,/W3,/nologo,/Od,/Zi,/Oi,/RTC1,/MDd,/GF,/Gm,/fp:fast -I&quot;$(CUDA_INC_PATH)&quot; -I./ -o $(IntDir)\$(InputName).obj $(InputPath)&#x0D;&#x0A;"
+		Outputs="$(IntDir)\$(InputName).obj"
+	/>
+</FileConfiguration>

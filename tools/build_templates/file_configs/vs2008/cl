@@ -1,0 +1,10 @@
+<FileConfiguration
+	Name="@(BuildName)|@(VSPlatformType)"
+	>
+	<Tool
+		Name="VCCustomBuildTool"
+		Description=""
+		CommandLine="&quot;@(SXPToolsPath)\pfc_cl_compiler.exe&quot; -c -o @(CLTargetPath)/$(InputName).ccl $(InputPath)"
+		Outputs="@(CLTargetPath)/$(InputName).ccl"
+	/>
+</FileConfiguration>

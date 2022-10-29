@@ -1,0 +1,10 @@
+<FileConfiguration
+	Name="@(BuildName)|@(VSPlatformType)"
+	>
+	<Tool
+		Name="VCCustomBuildTool"
+		Description=""
+		CommandLine="&quot;@(SXPToolsPath)\pfc_sxfx_compiler.exe&quot; -c -p @(SXFXPlatform) -o @(SXFXTargetPath)/$(InputName).csc @(SXFXAdditionalArguments) $(InputPath)"
+		Outputs="@(SXFXTargetPath)/$(InputName).csc"
+	/>
+</FileConfiguration>

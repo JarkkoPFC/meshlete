@@ -1,0 +1,10 @@
+<FileConfiguration
+	Name="@(BuildName)|@(VSPlatformType)"
+	>
+	<Tool
+		Name="VCCustomBuildTool"
+		Description="Compiling HLSL Shader &quot;$(InputFileName)&quot;"
+		CommandLine="&quot;$(DXSDK_DIR)Utilities\bin\x86\fxc.exe&quot; /nologo /E @(HLSLShaderMain) /T @(ShaderModel) @(HLSLAdditionalFlags) /Vn g_$(InputName) /Fh @(OutputDirectory)/$(InputName).sh $(InputPath)"
+		Outputs="@(OutputDirectory)/$(InputName).sh"
+	/>
+</FileConfiguration>

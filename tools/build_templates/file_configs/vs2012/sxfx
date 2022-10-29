@@ -1,0 +1,3 @@
+      <Command Condition="'$(Configuration)|$(Platform)'=='@(BuildName)|@(VSPlatformType)'">"@(SXPToolsPath)\pfc_sxfx_compiler.exe" -c -p @(SXFXPlatform) -o @(SXFXTargetPath)/%(Filename).csc @(SXFXAdditionalArguments) %(FullPath)</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='@(BuildName)|@(VSPlatformType)'">@(SXFXTargetPath)/%(Filename).csc</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='@(BuildName)|@(VSPlatformType)'"></Message>

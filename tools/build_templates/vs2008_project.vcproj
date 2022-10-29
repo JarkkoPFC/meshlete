@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="9.00"
+	Name="@(ProjectName)"
+	ProjectGUID="{@(VSProjectGUID)}"
+	RootNamespace="@(ProjectName)"
+	Keyword="Win32Proj"
+	TargetFrameworkVersion="131072"
+	>
+	<Platforms>
+@(Platforms)
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+@(Configurations)
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+@(Files)
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

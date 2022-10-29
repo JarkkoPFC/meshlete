@@ -1,0 +1,5 @@
+<FileConfiguration
+	Name="@(BuildName)|@(VSPlatformType)"
+	ExcludedFromBuild="true"
+	>
+</FileConfiguration>

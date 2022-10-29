@@ -1,0 +1,4 @@
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='@(BuildName)|@(VSPlatformType)'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
