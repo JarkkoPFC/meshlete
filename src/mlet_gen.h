@@ -57,6 +57,9 @@ struct mesh_geometry
   const mesh_geometry_segment *segs;
   const vec3f *vertices;
   const uint32_t *indices;
+  const void *vbuf;
+  usize_t vbuf_size;
+  uint8_t vfmt_id;
   usize_t num_segs;
   usize_t num_vertices;
   usize_t num_indices;

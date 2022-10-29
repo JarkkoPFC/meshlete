@@ -19,9 +19,6 @@
 #include <typeinfo>
 #include <string.h>
 #include <stdint.h>
-/*#include <cstdint>
-#include <cstring>
-#include <stdlib.h>*/
 #ifndef WIN32_LEAN_AND_MEAN
 #define WIN32_LEAN_AND_MEAN
 #endif
@@ -34,6 +31,7 @@ namespace pfc
 {
 
 // new
+#define PFC_BIG_ENDIAN 0
 // sized types
 typedef uint16_t float16_t;
 typedef uint16_t ufloat16_t;

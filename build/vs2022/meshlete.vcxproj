@@ -327,10 +327,12 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\src\export.cpp" />
     <ClCompile Include="..\..\src\mlet_gen.cpp" />
     <ClCompile Include="..\..\src\core\core.cpp" />
     <ClCompile Include="..\..\src\core\cstr.cpp" />
     <ClCompile Include="..\..\src\core\str.cpp" />
+    <ClCompile Include="..\..\src\core\streams.cpp" />
     <ClCompile Include="..\..\src\core\utils.cpp" />
     <ClCompile Include="..\..\src\core\math\geo3.cpp" />
     <ClCompile Include="..\..\src\rasterizer\rasterizer.cpp" />
@@ -339,6 +341,7 @@
     <ClCompile Include="..\..\src\rasterizer\rasterizer_tiling.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\src\export.h" />
     <ClInclude Include="..\..\src\mlet_gen.h" />
     <ClInclude Include="..\..\src\core\config.h" />
     <ClInclude Include="..\..\src\core\containers.h" />
@@ -348,6 +351,7 @@
     <ClInclude Include="..\..\src\core\meta.h" />
     <ClInclude Include="..\..\src\core\sort.h" />
     <ClInclude Include="..\..\src\core\str.h" />
+    <ClInclude Include="..\..\src\core\streams.h" />
     <ClInclude Include="..\..\src\core\utils.h" />
     <ClInclude Include="..\..\src\core\math\bit_math.h" />
     <ClInclude Include="..\..\src\core\math\fast_math.h" />
@@ -373,6 +377,7 @@
     <None Include="..\..\src\core\meta.inl" />
     <None Include="..\..\src\core\sort.inl" />
     <None Include="..\..\src\core\str.inl" />
+    <None Include="..\..\src\core\streams.inl" />
     <None Include="..\..\src\core\utils.inl" />
     <None Include="..\..\src\core\math\bit_math.inl" />
     <None Include="..\..\src\core\math\fast_math.inl" />

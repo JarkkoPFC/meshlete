@@ -7,6 +7,7 @@
     <Filter Include="rasterizer" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\src\export.cpp" />
     <ClCompile Include="..\..\src\mlet_gen.cpp" />
     <ClCompile Include="..\..\src\core\core.cpp">
       <Filter>core</Filter>
@@ -15,6 +16,9 @@
       <Filter>core</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\core\str.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\core\streams.cpp">
       <Filter>core</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\core\utils.cpp">
@@ -37,6 +41,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\src\export.h" />
     <ClInclude Include="..\..\src\mlet_gen.h" />
     <ClInclude Include="..\..\src\core\config.h">
       <Filter>core</Filter>
@@ -60,6 +65,9 @@
       <Filter>core</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\core\str.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\core\streams.h">
       <Filter>core</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\core\utils.h">
@@ -131,6 +139,9 @@
       <Filter>core</Filter>
     </None>
     <None Include="..\..\src\core\str.inl">
+      <Filter>core</Filter>
+    </None>
+    <None Include="..\..\src\core\streams.inl">
       <Filter>core</Filter>
     </None>
     <None Include="..\..\src\core\utils.inl">
