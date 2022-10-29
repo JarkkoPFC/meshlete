@@ -1,7 +1,7 @@
 //============================================================================
 // Software Rasterizer Library
 //
-// Copyright (c) 2021, Profoundic Technologies, Inc.
+// Copyright (c) 2022, Jarkko Lempiainen
 // All rights reserved.
 //============================================================================
 

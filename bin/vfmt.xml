@@ -70,14 +70,14 @@
     <element type="float32" expr="uv.y" />
   </format>
 
-  <format id="6" name="pack_p">
+  <format id="6" name="p48">
     <!-- position -->
     <element type="int16" expr="32767.5*(pos.x-mesh_bvol_pos.x)/mesh_bvol_rad" />
     <element type="int16" expr="32767.5*(pos.y-mesh_bvol_pos.y)/mesh_bvol_rad" />
     <element type="int16" expr="32767.5*(pos.z-mesh_bvol_pos.z)/mesh_bvol_rad" />
   </format>
 
-  <format id="7" name="pack_pn">
+  <format id="7" name="p48n32">
     <!-- position -->
     <element type="int16" expr="32767.5*(pos.x-mesh_bvol_pos.x)/mesh_bvol_rad" />
     <element type="int16" expr="32767.5*(pos.y-mesh_bvol_pos.y)/mesh_bvol_rad" />
@@ -89,7 +89,7 @@
     <element type="int8" expr="0" />
   </format>
 
-  <format id="8" name="pack_pq">
+  <format id="8" name="p48qrot32">
     <!-- position -->
     <element type="int16" expr="32767.5*(pos.x-mesh_bvol_pos.x)/mesh_bvol_rad" />
     <element type="int16" expr="32767.5*(pos.y-mesh_bvol_pos.y)/mesh_bvol_rad" />
@@ -98,7 +98,7 @@
     <element type="uint32" expr="int(qframe.w)&lt;&lt;31|(int(round(qframe.x*511.0))&amp;1023)&lt;&lt;21|(int(round(qframe.y*511.0))&amp;1023)&lt;&lt;11|int(round(qframe.z*1023.0))&amp;2047" />
   </format>
 
-  <format id="9" name="pack_pnu">
+  <format id="9" name="p48n32uv32">
     <!-- position -->
     <element type="int16" expr="32767.5*(pos.x-mesh_bvol_pos.x)/mesh_bvol_rad" />
     <element type="int16" expr="32767.5*(pos.y-mesh_bvol_pos.y)/mesh_bvol_rad" />
@@ -113,7 +113,7 @@
     <element type="int16" expr="2048*uv.y" />
   </format>
 
-  <format id="10" name="pack_pqu">
+  <format id="10" name="p48qrot32uv32">
     <!-- position -->
     <element type="int16" expr="32767.5*(pos.x-mesh_bvol_pos.x)/mesh_bvol_rad" />
     <element type="int16" expr="32767.5*(pos.y-mesh_bvol_pos.y)/mesh_bvol_rad" />
