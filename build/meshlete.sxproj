@@ -1,4 +1,4 @@
-<Project ProjectName="meshlete"
+<Project ProjectName="@(SXProjName)"
          OutputFile="@(ProjectName)_@(BuildName)"
          OutputFileExt="@(LibExt)"
          OutputDirectory="../../lib/@(PlatformName)_@(CompilerName)"

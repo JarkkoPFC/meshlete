@@ -1,4 +1,5 @@
 <Projects ProjCompilers="VS2019 VS2022" >
   <Project File="meshlete.sxproj" Compilers="@(ProjCompilers)" />
+  <Project File="meshlete_tool.sxproj" Compilers="@(ProjCompilers)" />
   <Project File="samples.sxproj" Compilers="@(ProjCompilers)" />
 </Projects>

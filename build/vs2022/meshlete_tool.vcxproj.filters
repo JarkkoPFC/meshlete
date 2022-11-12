@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\tool_src\geo_setup.cpp" />
+    <ClCompile Include="..\..\tool_src\main.cpp" />
+    <ClCompile Include="..\..\tool_src\vbuf_expr.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\tool_src\geo_setup.h" />
+    <ClInclude Include="..\..\tool_src\vbuf_expr.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\tool_src\vbuf_expr.inl" />
+  </ItemGroup>
+</Project>

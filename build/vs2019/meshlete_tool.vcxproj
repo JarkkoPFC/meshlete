@@ -28,8 +28,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ApplicationEnvironment>title</ApplicationEnvironment>
-    <ProjectGuid>{F31E2A4C-18E6-4909-BB6C-F215335692D7}</ProjectGuid>
-    <RootNamespace>samples</RootNamespace>
+    <ProjectGuid>{0957647e-3e68-0cf9-56ae-364ce7feef29}</ProjectGuid>
+    <RootNamespace>meshlete_tool</RootNamespace>
     <Keyword>Win32Proj</Keyword>
     <DefaultLanguage>en-US</DefaultLanguage>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
@@ -38,34 +38,34 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='retail|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='retail|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -92,29 +92,29 @@
   <PropertyGroup>
     <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">../../bin/</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">../../_intermediate/win32_vs2022/debug/samples/</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">samples_win32_debug</TargetName>
-    <OutputFile Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">../../bin/samples_win32_debug.exe</OutputFile>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">../../_intermediate/win32_vs2019/debug/meshlete_tool/</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">meshlete_tool_win32_debug</TargetName>
+    <OutputFile Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">../../bin/meshlete_tool_win32_debug.exe</OutputFile>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='debug|x64'">../../bin/</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='debug|x64'">../../_intermediate/win64_vs2022/debug/samples/</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='debug|x64'">samples_win64_debug</TargetName>
-    <OutputFile Condition="'$(Configuration)|$(Platform)'=='debug|x64'">../../bin/samples_win64_debug.exe</OutputFile>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='debug|x64'">../../_intermediate/win64_vs2019/debug/meshlete_tool/</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='debug|x64'">meshlete_tool_win64_debug</TargetName>
+    <OutputFile Condition="'$(Configuration)|$(Platform)'=='debug|x64'">../../bin/meshlete_tool_win64_debug.exe</OutputFile>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='release|Win32'">../../bin/</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='release|Win32'">../../_intermediate/win32_vs2022/release/samples/</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='release|Win32'">samples_win32_release</TargetName>
-    <OutputFile Condition="'$(Configuration)|$(Platform)'=='release|Win32'">../../bin/samples_win32_release.exe</OutputFile>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='release|Win32'">../../_intermediate/win32_vs2019/release/meshlete_tool/</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='release|Win32'">meshlete_tool_win32_release</TargetName>
+    <OutputFile Condition="'$(Configuration)|$(Platform)'=='release|Win32'">../../bin/meshlete_tool_win32_release.exe</OutputFile>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='release|x64'">../../bin/</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='release|x64'">../../_intermediate/win64_vs2022/release/samples/</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='release|x64'">samples_win64_release</TargetName>
-    <OutputFile Condition="'$(Configuration)|$(Platform)'=='release|x64'">../../bin/samples_win64_release.exe</OutputFile>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='release|x64'">../../_intermediate/win64_vs2019/release/meshlete_tool/</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='release|x64'">meshlete_tool_win64_release</TargetName>
+    <OutputFile Condition="'$(Configuration)|$(Platform)'=='release|x64'">../../bin/meshlete_tool_win64_release.exe</OutputFile>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='retail|Win32'">../../bin/</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='retail|Win32'">../../_intermediate/win32_vs2022/retail/samples/</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='retail|Win32'">samples_win32_retail</TargetName>
-    <OutputFile Condition="'$(Configuration)|$(Platform)'=='retail|Win32'">../../bin/samples_win32_retail.exe</OutputFile>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='retail|Win32'">../../_intermediate/win32_vs2019/retail/meshlete_tool/</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='retail|Win32'">meshlete_tool_win32_retail</TargetName>
+    <OutputFile Condition="'$(Configuration)|$(Platform)'=='retail|Win32'">../../bin/meshlete_tool_win32_retail.exe</OutputFile>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='retail|x64'">../../bin/</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='retail|x64'">../../_intermediate/win64_vs2022/retail/samples/</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='retail|x64'">samples_win64_retail</TargetName>
-    <OutputFile Condition="'$(Configuration)|$(Platform)'=='retail|x64'">../../bin/samples_win64_retail.exe</OutputFile>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='retail|x64'">../../_intermediate/win64_vs2019/retail/meshlete_tool/</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='retail|x64'">meshlete_tool_win64_retail</TargetName>
+    <OutputFile Condition="'$(Configuration)|$(Platform)'=='retail|x64'">../../bin/meshlete_tool_win64_retail.exe</OutputFile>
     <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='debug|Win32'" />
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='debug|Win32'" />
@@ -140,7 +140,7 @@
       <Optimization>Disabled</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <AdditionalIncludeDirectories>../..;../../mini_sxp</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>PFC_PLATFORM_WIN32;WIN32;_WINDOWS;PFC_DEBUG;_DEBUG;PFC_COMPILER_MSVC2022</PreprocessorDefinitions>
+      <PreprocessorDefinitions>PFC_PLATFORM_WIN32;WIN32;_WINDOWS;PFC_DEBUG;_DEBUG;PFC_COMPILER_MSVC2019</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <MinimalRebuild>false</MinimalRebuild>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -152,8 +152,8 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile></PrecompiledHeaderFile>
-      <PrecompiledHeaderOutputFile>../../_intermediate/win32_vs2022/debug/samples/samples_debug.pch</PrecompiledHeaderOutputFile>
-      <ProgramDataBaseFileName>../../bin/samples_win32_debug.pdb</ProgramDataBaseFileName>
+      <PrecompiledHeaderOutputFile>../../_intermediate/win32_vs2019/debug/meshlete_tool/meshlete_tool_debug.pch</PrecompiledHeaderOutputFile>
+      <ProgramDataBaseFileName>../../bin/meshlete_tool_win32_debug.pdb</ProgramDataBaseFileName>
       <WarningLevel>Level4</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
@@ -161,16 +161,16 @@
       <CompileAsWinRT>false</CompileAsWinRT>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>user32.lib;gdi32.lib;ws2_32.lib;../../mini_sxp/lib/win32_vs2022/mini_sxp_debug.lib;../../lib/win32_vs2022/meshlete_debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>../../bin/samples_win32_debug.exe</OutputFile>
+      <AdditionalDependencies>user32.lib;gdi32.lib;ws2_32.lib;../../mini_sxp/lib/win32_vs2019/mini_sxp_debug.lib;../../lib/win32_vs2019/meshlete_debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>../../bin/meshlete_tool_win32_debug.exe</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ProgramDatabaseFile>../../bin/samples_win32_debug.pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>../../bin/meshlete_tool_win32_debug.pdb</ProgramDatabaseFile>
       <SubSystem>Console</SubSystem>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <TargetMachine>MachineX86</TargetMachine>
-      <AdditionalLibraryDirectories></AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../mini_sxp/sxp_extlibs/lib/win32_vs2019</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
@@ -182,7 +182,7 @@
       <Optimization>Disabled</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <AdditionalIncludeDirectories>../..;../../mini_sxp</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>PFC_PLATFORM_WIN64;WIN32;_WINDOWS;PFC_DEBUG;_DEBUG;PFC_COMPILER_MSVC2022</PreprocessorDefinitions>
+      <PreprocessorDefinitions>PFC_PLATFORM_WIN64;WIN32;_WINDOWS;PFC_DEBUG;_DEBUG;PFC_COMPILER_MSVC2019</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <MinimalRebuild>false</MinimalRebuild>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -194,8 +194,8 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile></PrecompiledHeaderFile>
-      <PrecompiledHeaderOutputFile>../../_intermediate/win64_vs2022/debug/samples/samples_debug.pch</PrecompiledHeaderOutputFile>
-      <ProgramDataBaseFileName>../../bin/samples_win64_debug.pdb</ProgramDataBaseFileName>
+      <PrecompiledHeaderOutputFile>../../_intermediate/win64_vs2019/debug/meshlete_tool/meshlete_tool_debug.pch</PrecompiledHeaderOutputFile>
+      <ProgramDataBaseFileName>../../bin/meshlete_tool_win64_debug.pdb</ProgramDataBaseFileName>
       <WarningLevel>Level4</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
@@ -203,16 +203,16 @@
       <CompileAsWinRT>false</CompileAsWinRT>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>user32.lib;gdi32.lib;ws2_32.lib;../../mini_sxp/lib/win64_vs2022/mini_sxp_debug.lib;../../lib/win64_vs2022/meshlete_debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>../../bin/samples_win64_debug.exe</OutputFile>
+      <AdditionalDependencies>user32.lib;gdi32.lib;ws2_32.lib;../../mini_sxp/lib/win64_vs2019/mini_sxp_debug.lib;../../lib/win64_vs2019/meshlete_debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>../../bin/meshlete_tool_win64_debug.exe</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ProgramDatabaseFile>../../bin/samples_win64_debug.pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>../../bin/meshlete_tool_win64_debug.pdb</ProgramDatabaseFile>
       <SubSystem>Console</SubSystem>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <TargetMachine>MachineX64</TargetMachine>
-      <AdditionalLibraryDirectories></AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../mini_sxp/sxp_extlibs/lib/win64_vs2019</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'">
@@ -223,7 +223,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <AdditionalIncludeDirectories>../..;../../mini_sxp</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>PFC_PLATFORM_WIN32;WIN32;_WINDOWS;PFC_RELEASE;NDEBUG;PFC_COMPILER_MSVC2022</PreprocessorDefinitions>
+      <PreprocessorDefinitions>PFC_PLATFORM_WIN32;WIN32;_WINDOWS;PFC_RELEASE;NDEBUG;PFC_COMPILER_MSVC2019</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <MinimalRebuild>false</MinimalRebuild>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -234,8 +234,8 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile></PrecompiledHeaderFile>
-      <PrecompiledHeaderOutputFile>../../_intermediate/win32_vs2022/release/samples/samples_release.pch</PrecompiledHeaderOutputFile>
-      <ProgramDataBaseFileName>../../bin/samples_win32_release.pdb</ProgramDataBaseFileName>
+      <PrecompiledHeaderOutputFile>../../_intermediate/win32_vs2019/release/meshlete_tool/meshlete_tool_release.pch</PrecompiledHeaderOutputFile>
+      <ProgramDataBaseFileName>../../bin/meshlete_tool_win32_release.pdb</ProgramDataBaseFileName>
       <WarningLevel>Level4</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
@@ -243,10 +243,10 @@
       <CompileAsWinRT>false</CompileAsWinRT>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>user32.lib;gdi32.lib;ws2_32.lib;../../mini_sxp/lib/win32_vs2022/mini_sxp_release.lib;../../lib/win32_vs2022/meshlete_release.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>../../bin/samples_win32_release.exe</OutputFile>
+      <AdditionalDependencies>user32.lib;gdi32.lib;ws2_32.lib;../../mini_sxp/lib/win32_vs2019/mini_sxp_release.lib;../../lib/win32_vs2019/meshlete_release.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>../../bin/meshlete_tool_win32_release.exe</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ProgramDatabaseFile>../../bin/samples_win32_release.pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>../../bin/meshlete_tool_win32_release.pdb</ProgramDatabaseFile>
       <SubSystem>Console</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -254,7 +254,7 @@
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <TargetMachine>MachineX86</TargetMachine>
-      <AdditionalLibraryDirectories></AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../mini_sxp/sxp_extlibs/lib/win32_vs2019</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
@@ -268,7 +268,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <AdditionalIncludeDirectories>../..;../../mini_sxp</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>PFC_PLATFORM_WIN64;WIN32;_WINDOWS;PFC_RELEASE;NDEBUG;PFC_COMPILER_MSVC2022</PreprocessorDefinitions>
+      <PreprocessorDefinitions>PFC_PLATFORM_WIN64;WIN32;_WINDOWS;PFC_RELEASE;NDEBUG;PFC_COMPILER_MSVC2019</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <MinimalRebuild>false</MinimalRebuild>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -279,8 +279,8 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile></PrecompiledHeaderFile>
-      <PrecompiledHeaderOutputFile>../../_intermediate/win64_vs2022/release/samples/samples_release.pch</PrecompiledHeaderOutputFile>
-      <ProgramDataBaseFileName>../../bin/samples_win64_release.pdb</ProgramDataBaseFileName>
+      <PrecompiledHeaderOutputFile>../../_intermediate/win64_vs2019/release/meshlete_tool/meshlete_tool_release.pch</PrecompiledHeaderOutputFile>
+      <ProgramDataBaseFileName>../../bin/meshlete_tool_win64_release.pdb</ProgramDataBaseFileName>
       <WarningLevel>Level4</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
@@ -288,10 +288,10 @@
       <CompileAsWinRT>false</CompileAsWinRT>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>user32.lib;gdi32.lib;ws2_32.lib;../../mini_sxp/lib/win64_vs2022/mini_sxp_release.lib;../../lib/win64_vs2022/meshlete_release.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>../../bin/samples_win64_release.exe</OutputFile>
+      <AdditionalDependencies>user32.lib;gdi32.lib;ws2_32.lib;../../mini_sxp/lib/win64_vs2019/mini_sxp_release.lib;../../lib/win64_vs2019/meshlete_release.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>../../bin/meshlete_tool_win64_release.exe</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ProgramDatabaseFile>../../bin/samples_win64_release.pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>../../bin/meshlete_tool_win64_release.pdb</ProgramDatabaseFile>
       <SubSystem>Console</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -299,7 +299,7 @@
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <TargetMachine>MachineX64</TargetMachine>
-      <AdditionalLibraryDirectories></AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../mini_sxp/sxp_extlibs/lib/win64_vs2019</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='retail|Win32'">
@@ -310,7 +310,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <AdditionalIncludeDirectories>../..;../../mini_sxp</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>PFC_PLATFORM_WIN32;WIN32;_WINDOWS;PFC_RETAIL;NDEBUG;PFC_COMPILER_MSVC2022</PreprocessorDefinitions>
+      <PreprocessorDefinitions>PFC_PLATFORM_WIN32;WIN32;_WINDOWS;PFC_RETAIL;NDEBUG;PFC_COMPILER_MSVC2019</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <MinimalRebuild>false</MinimalRebuild>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -321,8 +321,8 @@
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile></PrecompiledHeaderFile>
-      <PrecompiledHeaderOutputFile>../../_intermediate/win32_vs2022/retail/samples/samples_retail.pch</PrecompiledHeaderOutputFile>
-      <ProgramDataBaseFileName>../../bin/samples_win32_retail.pdb</ProgramDataBaseFileName>
+      <PrecompiledHeaderOutputFile>../../_intermediate/win32_vs2019/retail/meshlete_tool/meshlete_tool_retail.pch</PrecompiledHeaderOutputFile>
+      <ProgramDataBaseFileName>../../bin/meshlete_tool_win32_retail.pdb</ProgramDataBaseFileName>
       <WarningLevel>Level4</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
@@ -330,10 +330,10 @@
       <CompileAsWinRT>false</CompileAsWinRT>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>user32.lib;gdi32.lib;ws2_32.lib;../../mini_sxp/lib/win32_vs2022/mini_sxp_retail.lib;../../lib/win32_vs2022/meshlete_retail.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>../../bin/samples_win32_retail.exe</OutputFile>
+      <AdditionalDependencies>user32.lib;gdi32.lib;ws2_32.lib;../../mini_sxp/lib/win32_vs2019/mini_sxp_retail.lib;../../lib/win32_vs2019/meshlete_retail.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>../../bin/meshlete_tool_win32_retail.exe</OutputFile>
       <GenerateDebugInformation>false</GenerateDebugInformation>
-      <ProgramDatabaseFile>../../bin/samples_win32_retail.pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>../../bin/meshlete_tool_win32_retail.pdb</ProgramDatabaseFile>
       <SubSystem>Console</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -342,7 +342,7 @@
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <TargetMachine>MachineX86</TargetMachine>
-      <AdditionalLibraryDirectories></AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../mini_sxp/sxp_extlibs/lib/win32_vs2019</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='retail|x64'">
@@ -356,7 +356,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <AdditionalIncludeDirectories>../..;../../mini_sxp</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>PFC_PLATFORM_WIN64;WIN32;_WINDOWS;PFC_RETAIL;NDEBUG;PFC_COMPILER_MSVC2022</PreprocessorDefinitions>
+      <PreprocessorDefinitions>PFC_PLATFORM_WIN64;WIN32;_WINDOWS;PFC_RETAIL;NDEBUG;PFC_COMPILER_MSVC2019</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <MinimalRebuild>false</MinimalRebuild>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -367,8 +367,8 @@
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile></PrecompiledHeaderFile>
-      <PrecompiledHeaderOutputFile>../../_intermediate/win64_vs2022/retail/samples/samples_retail.pch</PrecompiledHeaderOutputFile>
-      <ProgramDataBaseFileName>../../bin/samples_win64_retail.pdb</ProgramDataBaseFileName>
+      <PrecompiledHeaderOutputFile>../../_intermediate/win64_vs2019/retail/meshlete_tool/meshlete_tool_retail.pch</PrecompiledHeaderOutputFile>
+      <ProgramDataBaseFileName>../../bin/meshlete_tool_win64_retail.pdb</ProgramDataBaseFileName>
       <WarningLevel>Level4</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
@@ -376,10 +376,10 @@
       <CompileAsWinRT>false</CompileAsWinRT>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>user32.lib;gdi32.lib;ws2_32.lib;../../mini_sxp/lib/win64_vs2022/mini_sxp_retail.lib;../../lib/win64_vs2022/meshlete_retail.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>../../bin/samples_win64_retail.exe</OutputFile>
+      <AdditionalDependencies>user32.lib;gdi32.lib;ws2_32.lib;../../mini_sxp/lib/win64_vs2019/mini_sxp_retail.lib;../../lib/win64_vs2019/meshlete_retail.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>../../bin/meshlete_tool_win64_retail.exe</OutputFile>
       <GenerateDebugInformation>false</GenerateDebugInformation>
-      <ProgramDatabaseFile>../../bin/samples_win64_retail.pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>../../bin/meshlete_tool_win64_retail.pdb</ProgramDatabaseFile>
       <SubSystem>Console</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -388,12 +388,20 @@
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <TargetMachine>MachineX64</TargetMachine>
-      <AdditionalLibraryDirectories></AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../mini_sxp/sxp_extlibs/lib/win64_vs2019</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\samples\main.cpp" />
-    <ClCompile Include="..\..\samples\suzanne_data.cpp" />
+    <ClCompile Include="..\..\tool_src\geo_setup.cpp" />
+    <ClCompile Include="..\..\tool_src\main.cpp" />
+    <ClCompile Include="..\..\tool_src\vbuf_expr.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\tool_src\geo_setup.h" />
+    <ClInclude Include="..\..\tool_src\vbuf_expr.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\tool_src\vbuf_expr.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

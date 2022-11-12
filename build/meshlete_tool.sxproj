@@ -4,8 +4,9 @@
          OutputDirectory="../../bin"
          IntermediateDirectory="../../_intermediate/@(PlatformName)_@(CompilerName)/@(BuildName)/@(ProjectName)"
          IncludeDirectories="../..;../../mini_sxp;@(IncludeDirectories)"
+         LibraryDirectories="../../mini_sxp/sxp_extlibs/lib/@(PlatformName)_@(CompilerName)"
          LinkLibraries="../../mini_sxp/lib/@(PlatformName)_@(CompilerName)/mini_sxp_@(BuildName)@(LibExt);../../lib/@(PlatformName)_@(CompilerName)/meshlete_@(BuildName)@(LibExt);@(LinkLibraries)"
-         VSProjectGUID="F31E2A4C-18E6-4909-BB6C-F215335692D7"
+         VSProjectGUID="@(SXProjVSProjectGUID)"
          VSSubSystem="@(VSSubSystem_Console)" >
 
   <Builds>
@@ -21,7 +22,7 @@
 
   <Configurations TemplateFile="@(PlatformName)/@(ProjectConfigName)_@(BuildName)_exe" />
 
-  <FileConfigs RootDir="../samples" ProjFiles="*.cpp *.h *.inl *.inc" >
+  <FileConfigs RootDir="../tool_src" ProjFiles="*.cpp *.h *.inl *.inc" >
     <FileConfig Files="@(ProjFiles)" Recursive="1" />
   </FileConfigs>
 </Project>
