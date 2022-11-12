@@ -3,8 +3,8 @@
          OutputFileExt="@(ExeExt)"
          OutputDirectory="../../bin"
          IntermediateDirectory="../../_intermediate/@(PlatformName)_@(CompilerName)/@(BuildName)/@(ProjectName)"
-         IncludeDirectories="../../src"
-         LinkLibraries="../../lib/@(PlatformName)_@(CompilerName)/meshlete_@(BuildName)@(LibExt) @(LinkLibraries)"
+         IncludeDirectories="../..;../../mini_sxp"
+         LinkLibraries="../../lib/@(PlatformName)_@(CompilerName)/meshlete_@(BuildName)@(LibExt) @(LinkLibraries);../../mini_sxp/lib/@(PlatformName)_@(CompilerName)/mini_sxp_@(BuildName)@(LibExt) @(LinkLibraries)"
          VSProjectGUID="F31E2A4C-18E6-4909-BB6C-F215335692D7"
          VSSubSystem="@(VSSubSystem_Console)" >
 

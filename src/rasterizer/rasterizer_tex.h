@@ -14,7 +14,7 @@
 // interface
 //============================================================================
 // external
-#include "core/core.h"
+#include "sxp_src/core/core.h"
 #include <math.h>
 namespace pfc
 {

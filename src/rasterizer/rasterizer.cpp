@@ -5,7 +5,7 @@
 // All rights reserved.
 //============================================================================
 
-#include "rasterizer/rasterizer.h"
+#include "rasterizer.h"
 using namespace pfc;
 //----------------------------------------------------------------------------
 

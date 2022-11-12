@@ -8,7 +8,10 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "samples", "samples.vcxproj", "{F31E2A4C-18E6-4909-BB6C-F215335692D7}"
 	ProjectSection(ProjectDependencies) = postProject
 		{B6392165-724E-404D-A01D-2FB8AFD2CE66} = {B6392165-724E-404D-A01D-2FB8AFD2CE66}
+		{F7A94C9D-2577-4D66-AAC9-9B2FB29FC304} = {F7A94C9D-2577-4D66-AAC9-9B2FB29FC304}
 	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mini_sxp", "..\..\mini_sxp\build\vs2019\mini_sxp.vcxproj", "{F7A94C9D-2577-4D66-AAC9-9B2FB29FC304}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,6 +47,18 @@ Global
 		{F31E2A4C-18E6-4909-BB6C-F215335692D7}.retail|x64.Build.0 = retail|x64
 		{F31E2A4C-18E6-4909-BB6C-F215335692D7}.retail|x86.ActiveCfg = retail|Win32
 		{F31E2A4C-18E6-4909-BB6C-F215335692D7}.retail|x86.Build.0 = retail|Win32
+		{F7A94C9D-2577-4D66-AAC9-9B2FB29FC304}.debug|x64.ActiveCfg = debug|x64
+		{F7A94C9D-2577-4D66-AAC9-9B2FB29FC304}.debug|x64.Build.0 = debug|x64
+		{F7A94C9D-2577-4D66-AAC9-9B2FB29FC304}.debug|x86.ActiveCfg = debug|Win32
+		{F7A94C9D-2577-4D66-AAC9-9B2FB29FC304}.debug|x86.Build.0 = debug|Win32
+		{F7A94C9D-2577-4D66-AAC9-9B2FB29FC304}.release|x64.ActiveCfg = release|x64
+		{F7A94C9D-2577-4D66-AAC9-9B2FB29FC304}.release|x64.Build.0 = release|x64
+		{F7A94C9D-2577-4D66-AAC9-9B2FB29FC304}.release|x86.ActiveCfg = release|Win32
+		{F7A94C9D-2577-4D66-AAC9-9B2FB29FC304}.release|x86.Build.0 = release|Win32
+		{F7A94C9D-2577-4D66-AAC9-9B2FB29FC304}.retail|x64.ActiveCfg = retail|x64
+		{F7A94C9D-2577-4D66-AAC9-9B2FB29FC304}.retail|x64.Build.0 = retail|x64
+		{F7A94C9D-2577-4D66-AAC9-9B2FB29FC304}.retail|x86.ActiveCfg = retail|Win32
+		{F7A94C9D-2577-4D66-AAC9-9B2FB29FC304}.retail|x86.Build.0 = retail|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

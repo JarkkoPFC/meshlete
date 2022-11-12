@@ -7,8 +7,8 @@
 
 #include "export.h"
 #include "mlet_gen.h"
-#include "core/math/tform3.h"
-#include "core/streams.h"
+#include "sxp_src/core/math/tform3.h"
+#include "sxp_src/core/streams.h"
 using namespace pfc;
 //----------------------------------------------------------------------------
 

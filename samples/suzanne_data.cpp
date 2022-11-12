@@ -1,4 +1,4 @@
-#include "../src/core/math/math.h"
+#include "sxp_src/core/core.h"
 using namespace pfc;
 
 float s_3d_model_pos[]={

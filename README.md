@@ -23,7 +23,7 @@ Or to output debug 3D object to view in Blender with bounding spheres and visibi
 ./meshlete -i ../test_data/suzanne.dae -do suzanne_debug.dae -vf pack_pn -db -dc
 ```
 
-# Meshlet Bounding Spheres and Visibility Cones
+## Meshlet Bounding Spheres and Visibility Cones
 The tool can calculate bounding spheres (**-mb** and **-db** options) and visibility cones (**-mc** and **-dc** options) for the generated meshlets to help cull away geometry that doesn’t contribute to the final image for given camera view at run-time. The meshlet culling is more fine grained than classic object-level culling and can be done cheaply prior to any meshlet vertex processing thus improving the rendering performance. The storage requirements in *p3g* file for this culling data are quite small: 32 bits / meshlet for the bounding spheres and 32 bits / meshlet for the cones.
 
 For example if the meshlet bounding sphere is outside given camera FOV, the meshlet geometry processing can be entirely skipped. The spheres can be also used for occlusion culling, i.e. if the sphere is further than previously rasterized depth values, the meshlet processing can be skipped. In my tiled software rasterizer the bounding spheres are tested against rasterized Hi-Z for fast occlusion culling ([video](http://www.youtube.com/watch?v=B-2ABFcQLz0)). Furthermore, I’m also using the screen extents of the spheres to bin meshlets to tiles so having tight meshlet bounds reduces vertex processing and triangle setup cost.
@@ -43,6 +43,12 @@ The image below visualizes the visibility cones for the Suzanne 3D model with th
 </p>
 
 
-# License
+## Compilation Instructions
+1) Meshlete depends on [mini_sxp](https://github.com/JarkkoPFC/mini_sxp) core library, so first you need to clone the library (or copy the zip) to some directory.
+2) Run [install.bat](install.bat) and type in the directory where you cloned the library (i.e. where mini_sxp README.md file resides). This creates the appropriate symlink to the directory.
+
+Now you should be able to open `meshlete.sln` in Visual Studio and compile the library & samples. If the created symlink doesn't work, Visual Studio will fail to load mini_sxp library.
+
+## License
 
 Meshlete is licensed under MIT license. See [LICENSE](LICENSE) for details.

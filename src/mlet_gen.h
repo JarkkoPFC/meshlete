@@ -14,7 +14,7 @@
 // interface
 //============================================================================
 // external
-#include "core/math/geo3.h"
+#include "sxp_src/core/math/geo3.h"
 namespace pfc
 {
 

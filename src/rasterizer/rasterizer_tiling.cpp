@@ -5,8 +5,8 @@
 // All rights reserved.
 //============================================================================
 
-#include "rasterizer/rasterizer_tiling.h"
-#include "core/math/tform3.h"
+#include "rasterizer_tiling.h"
+#include "sxp_src/core/math/tform3.h"
 using namespace pfc;
 //----------------------------------------------------------------------------
 

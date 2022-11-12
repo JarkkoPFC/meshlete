@@ -14,7 +14,7 @@
 // interface
 //============================================================================
 // external
-#include "core/core.h"
+#include "sxp_src/core/core.h"
 namespace pfc
 {
 struct mesh_geometry;

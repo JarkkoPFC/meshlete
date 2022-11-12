@@ -139,7 +139,7 @@
       <AdditionalOptions>/bigobj</AdditionalOptions>
       <Optimization>Disabled</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>../../src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../..;../../mini_sxp</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>PFC_PLATFORM_WIN32;WIN32;_WINDOWS;PFC_DEBUG;_DEBUG;PFC_COMPILER_MSVC2019</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <MinimalRebuild>false</MinimalRebuild>
@@ -161,7 +161,7 @@
       <CompileAsWinRT>false</CompileAsWinRT>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>user32.lib;gdi32.lib;ws2_32.lib;../../lib/win32_vs2019/meshlete_debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>user32.lib;gdi32.lib;ws2_32.lib;../../lib/win32_vs2019/meshlete_debug.lib ;../../mini_sxp/lib/win32_vs2019/mini_sxp_debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>../../bin/samples_win32_debug.exe</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>../../bin/samples_win32_debug.pdb</ProgramDatabaseFile>
@@ -181,7 +181,7 @@
       <AdditionalOptions>/bigobj</AdditionalOptions>
       <Optimization>Disabled</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>../../src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../..;../../mini_sxp</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>PFC_PLATFORM_WIN64;WIN32;_WINDOWS;PFC_DEBUG;_DEBUG;PFC_COMPILER_MSVC2019</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <MinimalRebuild>false</MinimalRebuild>
@@ -203,7 +203,7 @@
       <CompileAsWinRT>false</CompileAsWinRT>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>user32.lib;gdi32.lib;ws2_32.lib;../../lib/win64_vs2019/meshlete_debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>user32.lib;gdi32.lib;ws2_32.lib;../../lib/win64_vs2019/meshlete_debug.lib ;../../mini_sxp/lib/win64_vs2019/mini_sxp_debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>../../bin/samples_win64_debug.exe</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>../../bin/samples_win64_debug.pdb</ProgramDatabaseFile>
@@ -222,7 +222,7 @@
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
-      <AdditionalIncludeDirectories>../../src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../..;../../mini_sxp</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>PFC_PLATFORM_WIN32;WIN32;_WINDOWS;PFC_RELEASE;NDEBUG;PFC_COMPILER_MSVC2019</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <MinimalRebuild>false</MinimalRebuild>
@@ -243,7 +243,7 @@
       <CompileAsWinRT>false</CompileAsWinRT>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>user32.lib;gdi32.lib;ws2_32.lib;../../lib/win32_vs2019/meshlete_release.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>user32.lib;gdi32.lib;ws2_32.lib;../../lib/win32_vs2019/meshlete_release.lib ;../../mini_sxp/lib/win32_vs2019/mini_sxp_release.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>../../bin/samples_win32_release.exe</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>../../bin/samples_win32_release.pdb</ProgramDatabaseFile>
@@ -267,7 +267,7 @@
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
-      <AdditionalIncludeDirectories>../../src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../..;../../mini_sxp</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>PFC_PLATFORM_WIN64;WIN32;_WINDOWS;PFC_RELEASE;NDEBUG;PFC_COMPILER_MSVC2019</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <MinimalRebuild>false</MinimalRebuild>
@@ -288,7 +288,7 @@
       <CompileAsWinRT>false</CompileAsWinRT>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>user32.lib;gdi32.lib;ws2_32.lib;../../lib/win64_vs2019/meshlete_release.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>user32.lib;gdi32.lib;ws2_32.lib;../../lib/win64_vs2019/meshlete_release.lib ;../../mini_sxp/lib/win64_vs2019/mini_sxp_release.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>../../bin/samples_win64_release.exe</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>../../bin/samples_win64_release.pdb</ProgramDatabaseFile>
@@ -309,7 +309,7 @@
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
-      <AdditionalIncludeDirectories>../../src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../..;../../mini_sxp</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>PFC_PLATFORM_WIN32;WIN32;_WINDOWS;PFC_RETAIL;NDEBUG;PFC_COMPILER_MSVC2019</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <MinimalRebuild>false</MinimalRebuild>
@@ -330,7 +330,7 @@
       <CompileAsWinRT>false</CompileAsWinRT>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>user32.lib;gdi32.lib;ws2_32.lib;../../lib/win32_vs2019/meshlete_retail.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>user32.lib;gdi32.lib;ws2_32.lib;../../lib/win32_vs2019/meshlete_retail.lib ;../../mini_sxp/lib/win32_vs2019/mini_sxp_retail.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>../../bin/samples_win32_retail.exe</OutputFile>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <ProgramDatabaseFile>../../bin/samples_win32_retail.pdb</ProgramDatabaseFile>
@@ -355,7 +355,7 @@
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
-      <AdditionalIncludeDirectories>../../src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../..;../../mini_sxp</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>PFC_PLATFORM_WIN64;WIN32;_WINDOWS;PFC_RETAIL;NDEBUG;PFC_COMPILER_MSVC2019</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <MinimalRebuild>false</MinimalRebuild>
@@ -376,7 +376,7 @@
       <CompileAsWinRT>false</CompileAsWinRT>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>user32.lib;gdi32.lib;ws2_32.lib;../../lib/win64_vs2019/meshlete_retail.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>user32.lib;gdi32.lib;ws2_32.lib;../../lib/win64_vs2019/meshlete_retail.lib ;../../mini_sxp/lib/win64_vs2019/mini_sxp_retail.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>../../bin/samples_win64_retail.exe</OutputFile>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <ProgramDatabaseFile>../../bin/samples_win64_retail.pdb</ProgramDatabaseFile>

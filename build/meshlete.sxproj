@@ -3,7 +3,7 @@
          OutputFileExt="@(LibExt)"
          OutputDirectory="../../lib/@(PlatformName)_@(CompilerName)"
          IntermediateDirectory="../../_intermediate/@(PlatformName)_@(CompilerName)/@(BuildName)/@(ProjectName)"
-         IncludeDirectories="../..;../../src;@(IncludeDirectories)"
+         IncludeDirectories="../../mini_sxp;@(IncludeDirectories)"
          PreprocessorDefinitions="_LIB;@(PreprocessorDefinitions)"
          VSProjectGUID="B6392165-724E-404d-A01D-2FB8AFD2CE66" >
 

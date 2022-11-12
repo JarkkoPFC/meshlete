@@ -7,10 +7,10 @@
 
 #include "mlet_gen.h"
 #include "rasterizer/rasterizer.h"
-#include "core/math/geo3.h"
-#include "core/math/monte_carlo.h"
-#include "core/math/tform3.h"
-#include "core/sort.h"
+#include "sxp_src/core/math/geo3.h"
+#include "sxp_src/core/math/monte_carlo.h"
+#include "sxp_src/core/math/tform3.h"
+#include "sxp_src/core/sort.h"
 #include <algorithm>
 using namespace pfc;
 //----------------------------------------------------------------------------

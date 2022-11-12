@@ -1,1 +1,0 @@
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='@(BuildName)|@(VSPlatformType)'"></PrecompiledHeader>

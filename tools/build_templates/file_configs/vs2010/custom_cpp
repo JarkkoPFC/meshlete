@@ -1,1 +1,0 @@
-      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='@(BuildName)|@(VSPlatformType)'">@(IncludeDirectories)</AdditionalIncludeDirectories>

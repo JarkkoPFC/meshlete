@@ -1,32 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="core" />
-    <Filter Include="core\math" />
-    <Filter Include="core\math\prim3" />
     <Filter Include="rasterizer" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\export.cpp" />
     <ClCompile Include="..\..\src\mlet_gen.cpp" />
-    <ClCompile Include="..\..\src\core\core.cpp">
-      <Filter>core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\core\cstr.cpp">
-      <Filter>core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\core\str.cpp">
-      <Filter>core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\core\streams.cpp">
-      <Filter>core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\core\utils.cpp">
-      <Filter>core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\core\math\geo3.cpp">
-      <Filter>core\math</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\rasterizer\rasterizer.cpp">
       <Filter>rasterizer</Filter>
     </ClCompile>
@@ -43,63 +22,6 @@
   <ItemGroup>
     <ClInclude Include="..\..\src\export.h" />
     <ClInclude Include="..\..\src\mlet_gen.h" />
-    <ClInclude Include="..\..\src\core\config.h">
-      <Filter>core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\core\containers.h">
-      <Filter>core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\core\core.h">
-      <Filter>core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\core\cstr.h">
-      <Filter>core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\core\iterators.h">
-      <Filter>core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\core\meta.h">
-      <Filter>core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\core\sort.h">
-      <Filter>core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\core\str.h">
-      <Filter>core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\core\streams.h">
-      <Filter>core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\core\utils.h">
-      <Filter>core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\core\math\bit_math.h">
-      <Filter>core\math</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\core\math\fast_math.h">
-      <Filter>core\math</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\core\math\geo3.h">
-      <Filter>core\math</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\core\math\math.h">
-      <Filter>core\math</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\core\math\monte_carlo.h">
-      <Filter>core\math</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\core\math\numeric.h">
-      <Filter>core\math</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\core\math\tform3.h">
-      <Filter>core\math</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\core\math\prim3\prim3.h">
-      <Filter>core\math\prim3</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\core\math\prim3\prim3_isect.h">
-      <Filter>core\math\prim3</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\src\rasterizer\rasterizer.h">
       <Filter>rasterizer</Filter>
     </ClInclude>
@@ -118,61 +40,5 @@
     <ClInclude Include="..\..\src\rasterizer\rasterizer_tiling.h">
       <Filter>rasterizer</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\src\core\containers.inl">
-      <Filter>core</Filter>
-    </None>
-    <None Include="..\..\src\core\core.inl">
-      <Filter>core</Filter>
-    </None>
-    <None Include="..\..\src\core\cstr.inl">
-      <Filter>core</Filter>
-    </None>
-    <None Include="..\..\src\core\iterators.inl">
-      <Filter>core</Filter>
-    </None>
-    <None Include="..\..\src\core\meta.inl">
-      <Filter>core</Filter>
-    </None>
-    <None Include="..\..\src\core\sort.inl">
-      <Filter>core</Filter>
-    </None>
-    <None Include="..\..\src\core\str.inl">
-      <Filter>core</Filter>
-    </None>
-    <None Include="..\..\src\core\streams.inl">
-      <Filter>core</Filter>
-    </None>
-    <None Include="..\..\src\core\utils.inl">
-      <Filter>core</Filter>
-    </None>
-    <None Include="..\..\src\core\math\bit_math.inl">
-      <Filter>core\math</Filter>
-    </None>
-    <None Include="..\..\src\core\math\fast_math.inl">
-      <Filter>core\math</Filter>
-    </None>
-    <None Include="..\..\src\core\math\geo3.inl">
-      <Filter>core\math</Filter>
-    </None>
-    <None Include="..\..\src\core\math\math.inl">
-      <Filter>core\math</Filter>
-    </None>
-    <None Include="..\..\src\core\math\monte_carlo.inl">
-      <Filter>core\math</Filter>
-    </None>
-    <None Include="..\..\src\core\math\numeric.inl">
-      <Filter>core\math</Filter>
-    </None>
-    <None Include="..\..\src\core\math\tform3.inl">
-      <Filter>core\math</Filter>
-    </None>
-    <None Include="..\..\src\core\math\prim3\prim3.inl">
-      <Filter>core\math\prim3</Filter>
-    </None>
-    <None Include="..\..\src\core\math\prim3\prim3_isect.inl">
-      <Filter>core\math\prim3</Filter>
-    </None>
   </ItemGroup>
 </Project>

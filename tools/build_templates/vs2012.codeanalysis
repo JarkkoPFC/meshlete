@@ -1,3 +1,0 @@
-    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='@(BuildName)|@(VSPlatformType)'">AllRules.ruleset</CodeAnalysisRuleSet>
-    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='@(BuildName)|@(VSPlatformType)'" />
-    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='@(BuildName)|@(VSPlatformType)'" />

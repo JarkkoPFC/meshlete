@@ -14,10 +14,10 @@
 // interface
 //============================================================================
 // external
-#include "rasterizer/rasterizer_tiling.h"
-#include "rasterizer/rasterizer_cache.h"
-#include "rasterizer/rasterizer_shader.h"
-#include "core/math/fast_math.h"
+#include "rasterizer_tiling.h"
+#include "rasterizer_cache.h"
+#include "rasterizer_shader.h"
+#include "sxp_src/core/math/fast_math.h"
 namespace pfc
 {
 

@@ -14,7 +14,7 @@
 // interface
 //============================================================================
 // external
-#include "rasterizer/rasterizer_config.h"
+#include "rasterizer_config.h"
 namespace pfc
 {
 

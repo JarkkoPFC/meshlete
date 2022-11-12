@@ -139,7 +139,7 @@
       <AdditionalOptions>/bigobj</AdditionalOptions>
       <Optimization>Disabled</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>../..;../../src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../mini_sxp</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>PFC_PLATFORM_WIN32;WIN32;_WINDOWS;PFC_DEBUG;_DEBUG;_LIB;PFC_COMPILER_MSVC2022</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <MinimalRebuild>false</MinimalRebuild>
@@ -172,7 +172,7 @@
       <AdditionalOptions>/bigobj</AdditionalOptions>
       <Optimization>Disabled</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>../..;../../src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../mini_sxp</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>PFC_PLATFORM_WIN64;WIN32;_WINDOWS;PFC_DEBUG;_DEBUG;_LIB;PFC_COMPILER_MSVC2022</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <MinimalRebuild>false</MinimalRebuild>
@@ -203,7 +203,7 @@
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
-      <AdditionalIncludeDirectories>../..;../../src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../mini_sxp</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>PFC_PLATFORM_WIN32;WIN32;_WINDOWS;PFC_RELEASE;NDEBUG;_LIB;PFC_COMPILER_MSVC2022</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <MinimalRebuild>false</MinimalRebuild>
@@ -237,7 +237,7 @@
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
-      <AdditionalIncludeDirectories>../..;../../src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../mini_sxp</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>PFC_PLATFORM_WIN64;WIN32;_WINDOWS;PFC_RELEASE;NDEBUG;_LIB;PFC_COMPILER_MSVC2022</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <MinimalRebuild>false</MinimalRebuild>
@@ -268,7 +268,7 @@
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
-      <AdditionalIncludeDirectories>../..;../../src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../mini_sxp</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>PFC_PLATFORM_WIN32;WIN32;_WINDOWS;PFC_RETAIL;NDEBUG;_LIB;PFC_COMPILER_MSVC2022</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <MinimalRebuild>false</MinimalRebuild>
@@ -302,7 +302,7 @@
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
-      <AdditionalIncludeDirectories>../..;../../src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../mini_sxp</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>PFC_PLATFORM_WIN64;WIN32;_WINDOWS;PFC_RETAIL;NDEBUG;_LIB;PFC_COMPILER_MSVC2022</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <MinimalRebuild>false</MinimalRebuild>
@@ -329,12 +329,6 @@
   <ItemGroup>
     <ClCompile Include="..\..\src\export.cpp" />
     <ClCompile Include="..\..\src\mlet_gen.cpp" />
-    <ClCompile Include="..\..\src\core\core.cpp" />
-    <ClCompile Include="..\..\src\core\cstr.cpp" />
-    <ClCompile Include="..\..\src\core\str.cpp" />
-    <ClCompile Include="..\..\src\core\streams.cpp" />
-    <ClCompile Include="..\..\src\core\utils.cpp" />
-    <ClCompile Include="..\..\src\core\math\geo3.cpp" />
     <ClCompile Include="..\..\src\rasterizer\rasterizer.cpp" />
     <ClCompile Include="..\..\src\rasterizer\rasterizer_cache.cpp" />
     <ClCompile Include="..\..\src\rasterizer\rasterizer_tex.cpp" />
@@ -343,51 +337,12 @@
   <ItemGroup>
     <ClInclude Include="..\..\src\export.h" />
     <ClInclude Include="..\..\src\mlet_gen.h" />
-    <ClInclude Include="..\..\src\core\config.h" />
-    <ClInclude Include="..\..\src\core\containers.h" />
-    <ClInclude Include="..\..\src\core\core.h" />
-    <ClInclude Include="..\..\src\core\cstr.h" />
-    <ClInclude Include="..\..\src\core\iterators.h" />
-    <ClInclude Include="..\..\src\core\meta.h" />
-    <ClInclude Include="..\..\src\core\sort.h" />
-    <ClInclude Include="..\..\src\core\str.h" />
-    <ClInclude Include="..\..\src\core\streams.h" />
-    <ClInclude Include="..\..\src\core\utils.h" />
-    <ClInclude Include="..\..\src\core\math\bit_math.h" />
-    <ClInclude Include="..\..\src\core\math\fast_math.h" />
-    <ClInclude Include="..\..\src\core\math\geo3.h" />
-    <ClInclude Include="..\..\src\core\math\math.h" />
-    <ClInclude Include="..\..\src\core\math\monte_carlo.h" />
-    <ClInclude Include="..\..\src\core\math\numeric.h" />
-    <ClInclude Include="..\..\src\core\math\tform3.h" />
-    <ClInclude Include="..\..\src\core\math\prim3\prim3.h" />
-    <ClInclude Include="..\..\src\core\math\prim3\prim3_isect.h" />
     <ClInclude Include="..\..\src\rasterizer\rasterizer.h" />
     <ClInclude Include="..\..\src\rasterizer\rasterizer_cache.h" />
     <ClInclude Include="..\..\src\rasterizer\rasterizer_config.h" />
     <ClInclude Include="..\..\src\rasterizer\rasterizer_shader.h" />
     <ClInclude Include="..\..\src\rasterizer\rasterizer_tex.h" />
     <ClInclude Include="..\..\src\rasterizer\rasterizer_tiling.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\src\core\containers.inl" />
-    <None Include="..\..\src\core\core.inl" />
-    <None Include="..\..\src\core\cstr.inl" />
-    <None Include="..\..\src\core\iterators.inl" />
-    <None Include="..\..\src\core\meta.inl" />
-    <None Include="..\..\src\core\sort.inl" />
-    <None Include="..\..\src\core\str.inl" />
-    <None Include="..\..\src\core\streams.inl" />
-    <None Include="..\..\src\core\utils.inl" />
-    <None Include="..\..\src\core\math\bit_math.inl" />
-    <None Include="..\..\src\core\math\fast_math.inl" />
-    <None Include="..\..\src\core\math\geo3.inl" />
-    <None Include="..\..\src\core\math\math.inl" />
-    <None Include="..\..\src\core\math\monte_carlo.inl" />
-    <None Include="..\..\src\core\math\numeric.inl" />
-    <None Include="..\..\src\core\math\tform3.inl" />
-    <None Include="..\..\src\core\math\prim3\prim3.inl" />
-    <None Include="..\..\src\core\math\prim3\prim3_isect.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -5,9 +5,9 @@
 // All rights reserved.
 //============================================================================
 
-#include "../src/mlet_gen.h"
-#include "../src/export.h"
-#include "../src/core/streams.h"
+#include "src/mlet_gen.h"
+#include "src/export.h"
+#include "sxp_src/core/streams.h"
 using namespace pfc;
 extern float s_3d_model_pos[];
 extern uint32_t s_3d_model_idx[];
