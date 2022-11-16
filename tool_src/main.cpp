@@ -20,7 +20,7 @@ using namespace pfc;
 //============================================================================
 // config
 //============================================================================
-static const char *s_tool_name="Meshlete v0.1.4";
+static const char *s_tool_name="Meshlete v0.1.5";
 static const char *s_tool_desc="Meshlet-based 3D object converter";
 static const char *s_copyright_message="Copyright (c) 2022, Jarkko Lempiainen. All rights reserved.";
 static const char *s_usage_message="Usage: meshlete [options] -i <input.obj> -o <output.p3g>   (-h for help)";

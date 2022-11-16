@@ -30,57 +30,71 @@ namespace
     parser_.set_var("mesh_bvol_rad", var_t(&mesh_bvol_.rad, 1));
 
     // access vertex data streams
+    uint32_t num_vtx=(uint32_t)vbuf_.num_vertices();
     const vec3f *pos_data=(const vec3f*)vbuf_.vertex_channel(vtxchannel_position);
     const vec3f *normal_data=(const vec3f*)vbuf_.vertex_channel(vtxchannel_normal);
     const vec3f *binormal_data=(const vec3f*)vbuf_.vertex_channel(vtxchannel_binormal);
     const vec3f *tangent_data=(const vec3f*)vbuf_.vertex_channel(vtxchannel_tangent);
-    const vec2f *uv0_data=(const vec2f*)vbuf_.vertex_channel(vtxchannel_uv, 0);
-    const vec2f *uv1_data=(const vec2f*)vbuf_.vertex_channel(vtxchannel_uv, 1);
-    const vec2f *uv2_data=(const vec2f*)vbuf_.vertex_channel(vtxchannel_uv, 2);
-    const vec2f *uv3_data=(const vec2f*)vbuf_.vertex_channel(vtxchannel_uv, 3);
-    const vec4f *color0_data=(const vec4f*)vbuf_.vertex_channel(vtxchannel_color, 0);
-    const vec4f *color1_data=(const vec4f*)vbuf_.vertex_channel(vtxchannel_color, 1);
-    const vec4f *color2_data=(const vec4f*)vbuf_.vertex_channel(vtxchannel_color, 2);
-    const vec4f *color3_data=(const vec4f*)vbuf_.vertex_channel(vtxchannel_color, 3);
+    const vec2f *uv_data[4];
+    for(unsigned uvi=0; uvi<4; ++uvi)
+      uv_data[uvi]=(const vec2f*)vbuf_.vertex_channel(vtxchannel_uv, uvi);
+    const vec4f *color_data[4];
+    for(unsigned ci=0; ci<4; ++ci)
+      color_data[ci]=(const vec4f*)vbuf_.vertex_channel(vtxchannel_color, ci);
 
     // setup vertex data variables
-    uint32_t num_vtx=(uint32_t)vbuf_.num_vertices();
     parser_.set_var("pos", pos_data?var_t(pos_data, num_vtx):var_t(&vec3f::s_zero, 1));
     parser_.set_var("normal", normal_data?var_t(normal_data, num_vtx):var_t(&vec3f::s_zero, 1));
     parser_.set_var("binormal", binormal_data?var_t(binormal_data, num_vtx):var_t(&vec3f::s_zero, 1));
     parser_.set_var("tangent", tangent_data?var_t(tangent_data, num_vtx):var_t(&vec3f::s_zero, 1));
-    parser_.set_var("uv", uv0_data?var_t(uv0_data, num_vtx):var_t(&vec2f::s_zero, 1));
-    parser_.set_var("uv0", uv0_data?var_t(uv0_data, num_vtx):var_t(&vec2f::s_zero, 1));
-    parser_.set_var("uv1", uv1_data?var_t(uv1_data, num_vtx):var_t(&vec2f::s_zero, 1));
-    parser_.set_var("uv2", uv2_data?var_t(uv2_data, num_vtx):var_t(&vec2f::s_zero, 1));
-    parser_.set_var("uv3", uv3_data?var_t(uv3_data, num_vtx):var_t(&vec2f::s_zero, 1));
-    parser_.set_var("color", color0_data?var_t(color0_data, num_vtx):var_t(&vec4f::s_zero, 1));
-    parser_.set_var("color0", color0_data?var_t(color0_data, num_vtx):var_t(&vec4f::s_zero, 1));
-    parser_.set_var("color1", color1_data?var_t(color1_data, num_vtx):var_t(&vec4f::s_zero, 1));
-    parser_.set_var("color2", color2_data?var_t(color2_data, num_vtx):var_t(&vec4f::s_zero, 1));
-    parser_.set_var("color3", color3_data?var_t(color3_data, num_vtx):var_t(&vec4f::s_zero, 1));
+    parser_.set_var("uv", uv_data[0]?var_t(uv_data[0], num_vtx):var_t(&vec2f::s_zero, 1));
+    parser_.set_var("uv0", uv_data[0]?var_t(uv_data[0], num_vtx):var_t(&vec2f::s_zero, 1));
+    parser_.set_var("uv1", uv_data[1]?var_t(uv_data[1], num_vtx):var_t(&vec2f::s_zero, 1));
+    parser_.set_var("uv2", uv_data[2]?var_t(uv_data[2], num_vtx):var_t(&vec2f::s_zero, 1));
+    parser_.set_var("uv3", uv_data[3]?var_t(uv_data[3], num_vtx):var_t(&vec2f::s_zero, 1));
+    parser_.set_var("color", color_data[0]?var_t(color_data[0], num_vtx):var_t(&vec4f::s_zero, 1));
+    parser_.set_var("color0", color_data[0]?var_t(color_data[0], num_vtx):var_t(&vec4f::s_zero, 1));
+    parser_.set_var("color1", color_data[1]?var_t(color_data[1], num_vtx):var_t(&vec4f::s_zero, 1));
+    parser_.set_var("color2", color_data[2]?var_t(color_data[2], num_vtx):var_t(&vec4f::s_zero, 1));
+    parser_.set_var("color3", color_data[3]?var_t(color_data[3], num_vtx):var_t(&vec4f::s_zero, 1));
 
     if(normal_data && binormal_data && tangent_data)
     {
-      // generate quaternion frame
-      vec4f *frame_data=(vec4f*)PFC_MEM_ALLOC(num_vtx*sizeof(vec4f));
+      // generate quaternion and 32bit quantized rotations from the tangent frame
+      vec4f *qframe_data=(vec4f*)PFC_MEM_ALLOC(num_vtx*sizeof(vec4f));
+      int32_t *tbn32_data=(int32_t*)PFC_MEM_ALLOC(num_vtx*sizeof(uint32_t));
       for(uint32_t i=0; i<num_vtx; ++i)
       {
-        vec3f b=unit_z(cross(normal_data[i], tangent_data[i]));
-        if(norm2(b)>0.0001f)
+        vec3f n=normal_data[i];
+        vec3f b=unit_z(cross(n, tangent_data[i]));
+        if(norm2(b)>0.0f)
         {
-          vec3f t=cross(b, normal_data[i]);
+          // setup quaternion rotation
+          vec3f t=cross(b, n);
+          bool is_right_handed=dot(b, binormal_data[i])<0.0f;
           quatf q;
-          convert(q, mat33f(t, b, normal_data[i]));
-          frame_data[i].set(q.x, q.y, q.z, dot(b, binormal_data[i])<0.0f?1.0f:0.0f);
+          convert(q, mat33f(t, b, n));
+          qframe_data[i].set(q.x, q.y, q.z, is_right_handed?1.0f:0.0f);
+
+          // setup 32bit quantized rotation
+          uint32_t tbn32=quantize_mat33_32(mat33f(t, is_right_handed?-b:b, n));
+          tbn32_data[i]=tbn32;
         }
         else
-          frame_data[i].set(0.0f, 0.0f, 0.0f, 1.0f);
+        {
+          qframe_data[i].set(0.0f, 0.0f, 0.0f, 1.0f);
+          vec2f oct=vec3_to_oct2x1(n);
+          uint32_t qx=uint32_t((oct.x+2.0f)*(0.25f*2047.0f)+0.5f); // 11 bits
+          uint32_t qy=uint32_t((oct.y+1.0f)*(0.5f*1023.0f)+0.5f);  // 10 bits
+          tbn32_data[i]=(qy<<11)|qx;
+        }
       }
 
-      // setup expression variable
-      parser_.set_var("qframe", var_t(frame_data, num_vtx));
+      // setup expression variables
+      parser_.set_var("qframe", var_t(qframe_data, num_vtx));
       ((var_t*)parser_.var("qframe"))->pinned_owner=true;
+      parser_.set_var("tbn32", var_t(tbn32_data, num_vtx));
+      ((var_t*)parser_.var("tbn32"))->pinned_owner=true;
     }
   }
   //--------------------------------------------------------------------------

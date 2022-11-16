@@ -53,7 +53,7 @@ bool vbuf_expression_value::get(T *res_, uint32_t num_vals_, unsigned stride_) c
         (uint8_t*&)res_+=stride_;
         data+=data_stride;
       }
-    }break;
+    } break;
   }
   return true;
 }
