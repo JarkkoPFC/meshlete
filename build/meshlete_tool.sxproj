@@ -1,5 +1,5 @@
 <Project ProjectName="@(SXProjName)"
-         OutputFile="@(ProjectName)_@(PlatformName)_@(BuildName)"
+         OutputFile="meshlete_@(PlatformName)_@(BuildName)"
          OutputFileExt="@(ExeExt)"
          OutputDirectory="../../bin"
          IntermediateDirectory="../../_intermediate/@(PlatformName)_@(CompilerName)/@(BuildName)/@(ProjectName)"
