@@ -20,7 +20,7 @@ using namespace pfc;
 //============================================================================
 // config
 //============================================================================
-static const char *s_tool_name="Meshlete v0.1.5";
+static const char *s_tool_name="Meshlete v0.1.6";
 static const char *s_tool_desc="Meshlet-based 3D object converter";
 static const char *s_copyright_message="Copyright (c) 2022, Jarkko Lempiainen. All rights reserved.";
 static const char *s_usage_message="Usage: meshlete [options] -i <input.obj> -o <output.p3g>   (-h for help)";
@@ -240,7 +240,7 @@ bool parse_command_arguments(command_arguments &ca_, const char **args_, unsigne
             int mlet_max_vtx=0;
             if(!str_to_int(mlet_max_vtx, args_[++arg_idx]))
             {
-              error_msg+=("> Error: Invalid meshnet vertex count parameter\r\n");
+              error_msg+=("> Error: Invalid meshlet vertex count parameter\r\n");
               break;
             }
             if(mlet_max_vtx<8 || mlet_max_vtx>255)
