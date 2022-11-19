@@ -11,15 +11,16 @@
 # make targets:
 #   exes                - compile all libraries and executables (default)
 #   libs                - compile all libraries
-#   clean               - delete libraries and object files for the target
-#   <exe name>          - compile given executable, e.g. sxe_editor
-#   <library name>      - compile given engine library, e.g. core
+#   clean               - delete exes, libraries and object files for the target
+#   clean_int           - delete intermediate files
+#   <exe name>          - compile given executable
+#   <library name>      - compile given engine library
 #
 # examples:
 # to compile linux64 release build of all libraries:
 #   make build=release libs
 #
-# to compile win64 release build of the meshlete library:
+# to compile win64 release build of the library:
 #   make build=release platform=win64 meshlete
 #
 # to clean all linux64 release build files:
@@ -68,7 +69,7 @@ CDEFS+=-D PFC_PLATFORM_WIN64
 endif
 
 # generic settings
-.DEFAULT_GOAL:=libs
+.DEFAULT_GOAL:=exes
 MD=mkdir -p $(1)
 RD=rm -r -f $(1)
 RM=rm -f $(1)
