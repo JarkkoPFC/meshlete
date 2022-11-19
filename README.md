@@ -46,9 +46,9 @@ The image below visualizes the visibility cones for the Suzanne 3D model with th
 ## Compilation Instructions
 Meshlete depends on [mini_sxp](https://github.com/JarkkoPFC/mini_sxp) core library, so first you need to clone the library (or copy the zip) to some directory.
 ### Windows
-Run [install.bat](install.bat) and type in the directory where you cloned the mini_sxp library (i.e. where mini_sxp README.md file resides). This creates the appropriate symlink to the directory. Now you should be able to open `meshlete.sln` in Visual Studio or use [makefile](build/gcc/makefile) for GCC to compile the library, tool and the sample. If the created symlink doesn't work, Visual Studio will fail to load mini_sxp library and GCC fails the compilation.
+Run [install.bat](install.bat) (as administrator) and type in the directory where you cloned the mini_sxp library (i.e. where mini_sxp README.md file resides). This creates the appropriate symlink to the directory. Now you should be able to open `meshlete.sln` in Visual Studio or use [makefile](build/gcc/makefile) for GCC to compile the library, tool and the sample. If the created symlink doesn't work, Visual Studio will fail to load mini_sxp library and GCC fails the compilation.
 ### Linux
-Run [install.sh](install.sh) and type in the directory where you cloned the mini_sxp library (i.e. where mini_sxp README.md file resides). This creates the appropriate symlink to the directory. Now you can compile the project with GCC using the [makefile](build/gcc/makefile) with instructions. If the created symlink doesn't work GCC fails the compilation.
+Run [install.sh](install.sh) (after enabling execution rights for the script file) and type in the directory where you cloned the mini_sxp library (i.e. where mini_sxp README.md file resides). This creates the appropriate symlink to the directory. Now you can compile the project with GCC using the [makefile](build/gcc/makefile) with instructions. If the created symlink doesn't work GCC fails the compilation.
 
 ## License
 
