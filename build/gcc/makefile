@@ -105,7 +105,7 @@ MESHLETE_LIB:=$(LIBDIR)/meshlete_$(build).a
 MESHLETE_LIB_DIRS:=src src/rasterizer
 
 # executables
-EXECUTABLES=MESHLETE
+EXECUTABLES=MESHLETE SAMPLE
 # unittest exe
 MESHLETE_EXE:=$(EXEDIR)/meshlete_$(platform)_$(build)
 MESHLETE_EXE_DIRS:=tool_src
