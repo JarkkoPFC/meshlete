@@ -2,7 +2,7 @@
 
 *Chop 3D objects to meshlets*
 
-Meshlete is a library and Windows command line tool which converts 3D models to meshlet-based 3D models. I developed the tool originally for my tiled software rasterizer and Arduino graphics library hobby project ([video]( https://www.youtube.com/watch?v=Xs_5Sv9oBtk)), but it can be useful for other applications as well, e.g. DX12-based modern renderers using mesh shaders.
+Meshlete is a library and command line tool for Windows and Linux, which converts 3D models to meshlet-based 3D models. I developed the tool originally for my tiled software rasterizer and Arduino graphics library hobby project ([video]( https://www.youtube.com/watch?v=Xs_5Sv9oBtk)), but it can be useful for other applications as well, e.g. DX12-based modern renderers using mesh shaders.
 
 Meshlets are small chunks of 3D geometry consisting some small number of vertices and triangles. Below is an image of a 3D model from Blender called “Suzanne” which is split to 666 meshlets of max 64 vertices in each (**-mv 64**) and visualized with different colors. Splitting the geometry processing to meshlets instead of processing the mesh as a whole has various benefits and has better fit with batch-based geometry processing (vs post-transform cache model) in modern GPU architectures as well.
 
@@ -44,10 +44,11 @@ The image below visualizes the visibility cones for the Suzanne 3D model with th
 
 
 ## Compilation Instructions
-1) Meshlete depends on [mini_sxp](https://github.com/JarkkoPFC/mini_sxp) core library, so first you need to clone the library (or copy the zip) to some directory.
-2) Run [install.bat](install.bat) and type in the directory where you cloned the library (i.e. where mini_sxp README.md file resides). This creates the appropriate symlink to the directory.
-
-Now you should be able to open `meshlete.sln` in Visual Studio and compile the library & samples. If the created symlink doesn't work, Visual Studio will fail to load mini_sxp library.
+Meshlete depends on [mini_sxp](https://github.com/JarkkoPFC/mini_sxp) core library, so first you need to clone the library (or copy the zip) to some directory.
+### Windows
+Run [install.bat](install.bat) and type in the directory where you cloned the mini_sxp library (i.e. where mini_sxp README.md file resides). This creates the appropriate symlink to the directory. Now you should be able to open `meshlete.sln` in Visual Studio or use [makefile](build/gcc/makefile) for GCC to compile the library, tool and the sample. If the created symlink doesn't work, Visual Studio will fail to load mini_sxp library and GCC fails the compilation.
+### Linux
+Run [install.sh](install.sh) and type in the directory where you cloned the mini_sxp library (i.e. where mini_sxp README.md file resides). This creates the appropriate symlink to the directory. Now you can compile the project with GCC using the [makefile](build/gcc/makefile) with instructions. If the created symlink doesn't work GCC fails the compilation.
 
 ## License
 
