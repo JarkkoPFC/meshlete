@@ -270,6 +270,7 @@ bool pfc::setup_mesh_geometry(const mesh &mesh_, const mesh_geometry_setup_cfg &
         case vtxelemtype_uint32:  v.get((uint32_t*)tmp_vbuf_data, num_mesh_vtx, vtx_size); break;
         case vtxelemtype_float16: v.get((vtx_float16*)tmp_vbuf_data, num_mesh_vtx, vtx_size); break;
         case vtxelemtype_float32: v.get((float32_t*)tmp_vbuf_data, num_mesh_vtx, vtx_size); break;
+        default: PFC_ERROR_NOT_IMPL();
       }
       tmp_vbuf_data+=vtx_element_type_size(elem_.type);
       ++velem_idx;

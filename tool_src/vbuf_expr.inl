@@ -24,6 +24,7 @@ void vbuf_expression_value::init(T *data_, uint8_t num_elems_, uint32_t num_vals
 template<typename T>
 bool vbuf_expression_value::get(T *res_, uint32_t num_vals_, unsigned stride_) const
 {
+  using namespace pfc;
   if(!num_data_elems)
     return false;
   if(!stride_)

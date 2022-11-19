@@ -28,9 +28,9 @@ namespace
   {
     float rrad=rcp_z(mesh_bvol_.rad);
     vec3f seg_bvol_pos=(seg_bvol_.pos-mesh_bvol_.pos)*(32767.0f*rrad);
-    out_qbvol_pos_[0]=int16_t(clamp(round(seg_bvol_pos.x), -32767.5f, 32767.5f));
-    out_qbvol_pos_[1]=int16_t(clamp(round(seg_bvol_pos.y), -32767.5f, 32767.5f));
-    out_qbvol_pos_[2]=int16_t(clamp(round(seg_bvol_pos.z), -32767.5f, 32767.5f));
+    out_qbvol_pos_[0]=int16_t(clamp(float(round(seg_bvol_pos.x)), -32767.5f, 32767.5f));
+    out_qbvol_pos_[1]=int16_t(clamp(float(round(seg_bvol_pos.y)), -32767.5f, 32767.5f));
+    out_qbvol_pos_[2]=int16_t(clamp(float(round(seg_bvol_pos.z)), -32767.5f, 32767.5f));
     out_qbvol_rad_=uint16_t(min<int>(65535, int(ceil(seg_bvol_.rad*65535.0f*rrad))));
   }
   //----
@@ -39,9 +39,9 @@ namespace
   {
     float rrad=rcp_z(seg_bvol_.rad);
     vec3f mlet_bvol_pos=(mlet_bvol_.pos-seg_bvol_.pos)*(127.0f*rrad);
-    out_qbvol_pos_[0]=int8_t(clamp(round(mlet_bvol_pos.x), -127.5f, 127.5f));
-    out_qbvol_pos_[1]=int8_t(clamp(round(mlet_bvol_pos.y), -127.5f, 127.5f));
-    out_qbvol_pos_[2]=int8_t(clamp(round(mlet_bvol_pos.z), -127.5f, 127.5f));
+    out_qbvol_pos_[0]=int8_t(clamp(float(round(mlet_bvol_pos.x)), -127.5f, 127.5f));
+    out_qbvol_pos_[1]=int8_t(clamp(float(round(mlet_bvol_pos.y)), -127.5f, 127.5f));
+    out_qbvol_pos_[2]=int8_t(clamp(float(round(mlet_bvol_pos.z)), -127.5f, 127.5f));
     out_qbvol_rad_=uint8_t(min<int>(255, int(ceil(mlet_bvol_.rad*255.0f*rrad))));
   }
   //--------------------------------------------------------------------------

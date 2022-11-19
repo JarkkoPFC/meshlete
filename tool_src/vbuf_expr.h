@@ -14,8 +14,9 @@
 // interface
 //============================================================================
 // external
-#include "sxp_src/core/expression.h"
 #include "sxp_src/core/math/math.h"
+#include "sxp_src/core/expression.h"
+#include "sxp_src/core/variant.h"
 
 // new
 struct vbuf_expression_value;
