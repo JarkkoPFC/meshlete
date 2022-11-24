@@ -50,6 +50,14 @@ Run [install.bat](install.bat) (as administrator) and type in the directory wher
 ### Linux
 Run [install.sh](install.sh) (after enabling execution rights for the script file) and type in the directory where you cloned the mini_sxp library (i.e. where mini_sxp README.md file resides). This creates the appropriate symlink to the directory. Now you can compile the project with GCC using the [makefile](build/gcc/makefile) with instructions. If the created symlink doesn't work GCC fails the compilation.
 
+## TODO
+Some planned further improvements (excluding issues) of the library:
+- [ ] Option to prune completely occluded meshlets (no visible angles)
+- [ ] Spatial data structure to optimize triangle search in case of unavailable adjacent triangles
+- [ ] Refinition pass(es) to move triangles to more optimal clusters
+- [ ] Option for simplified visibility cone generation purely from normals (no occlusion)
+- [ ] Support for different heuristic for "best triangle" to be included in a meshlet
+
 ## License
 
 Meshlete is licensed under MIT license. See [LICENSE](LICENSE) for details.
