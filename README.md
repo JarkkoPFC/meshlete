@@ -57,6 +57,7 @@ Some planned further improvements (excluding issues) of the library:
 - [ ] Refinition pass(es) to move triangles to more optimal clusters
 - [ ] Option for simplified visibility cone generation purely from normals (no occlusion)
 - [ ] Support for different heuristic for "best triangle" to be included in a meshlet
+- [ ] Sort meshlets by visibility cone angle to render object roughly from outside to inside
 
 ## License
 
