@@ -16,11 +16,11 @@ For the generated *p3g* file the tool supports custom vertex formats, which are 
 
 An example to split the Suzanne model to meshlets with bounding spheres and visibility cones and 10 bytes/vertex format (packed position+normal):
 ```
-./meshlete -i ../test_data/suzanne.dae -o suzanne.p3g -vf pack_pn -mb -mc
+./meshlete -i ../test_data/suzanne.dae -o suzanne.p3g -vf p48n32 -mb -mc
 ```
 Or to output debug 3D object to view in Blender with bounding spheres and visibility cones:
 ```
-./meshlete -i ../test_data/suzanne.dae -do suzanne_debug.dae -vf pack_pn -db -dc
+./meshlete -i ../test_data/suzanne.dae -do suzanne_debug.dae -vf p48n32 -db -dc
 ```
 
 ## Meshlet Bounding Spheres and Visibility Cones
@@ -44,11 +44,11 @@ The image below visualizes the visibility cones for the Suzanne 3D model with th
 
 
 ## Compilation Instructions
-Meshlete depends on [mini_sxp](https://github.com/JarkkoPFC/mini_sxp) core library, so first you need to clone the library (or copy the zip) to some directory.
+Meshlete depends on [mini_sxp](https://github.com/JarkkoPFC/mini_sxp) core library, so first you need to clone the library (or copy the zip) to some directory. Then you need to create a "symlink" with the install file, which creates a "virtual" directory inside the project dir that points to the mini_sxp directory. The symlink should appear as regular directory called "mini_sxp" inside the project root dir. Below are install instructions for Windows and Linux. If you have problems with the install, you can try to create the symlink manually from command line (note on Windows you have to use regular command prompt "cmd" and not PowerShell), or if everything else fails, just copy the mini_sxp project in the project dir under "mini_sxp" name.
 ### Windows
-Run [install.bat](install.bat) (as administrator) and type in the directory where you cloned the mini_sxp library (i.e. where mini_sxp README.md file resides). This creates the appropriate symlink to the directory. Now you should be able to open `meshlete.sln` in Visual Studio or use [makefile](build/gcc/makefile) for GCC to compile the library, tool and the sample. If the created symlink doesn't work, Visual Studio will fail to load mini_sxp library and GCC fails the compilation.
+Run [install.bat](install.bat) (as administrator) and type in the directory where you cloned the mini_sxp library (i.e. where mini_sxp README.md file resides). Now you should be able to open `meshlete.sln` in Visual Studio or use [makefile](build/gcc/makefile) for GCC to compile the library, the command-line tool and the sample. If the created symlink doesn't work, Visual Studio will fail to load mini_sxp library and GCC fails the compilation.
 ### Linux
-Run [install.sh](install.sh) (after enabling execution rights for the script file) and type in the directory where you cloned the mini_sxp library (i.e. where mini_sxp README.md file resides). This creates the appropriate symlink to the directory. Now you can compile the project with GCC using the [makefile](build/gcc/makefile) with instructions. If the created symlink doesn't work GCC fails the compilation.
+Run [install.sh](install.sh) (after enabling execution rights for the script file) and type in the directory where you cloned the mini_sxp library (i.e. where mini_sxp README.md file resides). Now you can compile the project with GCC using the [makefile](build/gcc/makefile) with instructions. If the created symlink doesn't work GCC fails the compilation.
 
 ## TODO
 Some planned further improvements (excluding issues) of the library:
