@@ -29,13 +29,14 @@ bool vbuf_expression_value::get(T *res_, uint32_t num_vals_, unsigned stride_) c
     return false;
   if(!stride_)
     stride_=sizeof(T);
-  num_vals_=min(num_vals_, num_vals);
+  num_vals_=data_stride?min(num_vals_, num_vals):num_vals_;
+  T *res_end=(T*)(((uint8_t*)res_)+num_vals_*stride_);
   switch(value.type_index())
   {
     case vbuf_expression_value::value_t::find_type<pfc::float32_t*>::res:
     {
-      const pfc::float32_t *data=type_ref<pfc::float32_t*>(value)+data_offset, *data_end=data+num_vals_*data_stride;
-      while(data<data_end)
+      const pfc::float32_t *data=type_ref<pfc::float32_t*>(value)+data_offset;
+      while(res_<res_end)
       {
         T v=T(*data);
         mem_copy(res_, &v, sizeof(T));
@@ -46,8 +47,8 @@ bool vbuf_expression_value::get(T *res_, uint32_t num_vals_, unsigned stride_) c
 
     case vbuf_expression_value::value_t::find_type<int32_t*>::res:
     {
-      const int32_t *data=type_ref<int32_t*>(value)+data_offset, *data_end=data+num_vals_*data_stride;
-      while(data<data_end)
+      const int32_t *data=type_ref<int32_t*>(value)+data_offset;
+      while(res_<res_end)
       {
         T v=T(*data);
         mem_copy(res_, &v, sizeof(T));

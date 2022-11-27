@@ -20,7 +20,7 @@ using namespace pfc;
 //============================================================================
 // config
 //============================================================================
-static const char *s_tool_name="Meshlete v0.1.6";
+static const char *s_tool_name="Meshlete v0.1.7";
 static const char *s_tool_desc="Meshlet-based 3D object converter";
 static const char *s_copyright_message="Copyright (c) 2022, Jarkko Lempiainen. All rights reserved.";
 static const char *s_usage_message="Usage: meshlete [options] -i <input.obj> -o <output.p3g>   (-h for help)";
@@ -458,7 +458,8 @@ PFC_MAIN(const char *args_[], unsigned num_args_)
   setup_cfg.vfmt_name=ca.vfmt_name.c_str();
   mesh_geometry mgeo;
   mesh_geometry_container mgeo_container;
-  setup_mesh_geometry(msh, setup_cfg, mgeo, mgeo_container);
+  if(!setup_mesh_geometry(msh, setup_cfg, mgeo, mgeo_container))
+    return -1;
 
   // generate meshlets for the mesh
   logf("> Generating meshlets (max %i verts, %i tris)...\r\n", ca.mlet_max_vtx, ca.mlet_max_tris);
