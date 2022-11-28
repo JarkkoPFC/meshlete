@@ -52,12 +52,13 @@ Run [install.sh](install.sh) (after enabling execution rights for the script fil
 
 ## TODO
 Some planned further improvements (excluding issues) of the library:
-- [ ] Option to prune completely occluded meshlets (no visible angles)
-- [ ] Spatial data structure to optimize triangle search in case of unavailable adjacent triangles
-- [ ] Refinition pass(es) to move triangles to more optimal clusters
-- [ ] Option for simplified visibility cone generation purely from normals (no occlusion)
-- [ ] Support for different heuristic for "best triangle" to be included in a meshlet
-- [ ] Sort meshlets by visibility cone angle to render object roughly from outside to inside
+- [ ] Option to prune completely occluded meshlets (no visible angles) ***[S0]***
+- [ ] Spatial data structure to optimize triangle search in case of unavailable adjacent triangles ***[S1]***
+- [ ] Refinition pass(es) to move triangles to more optimal clusters ***[S2]***
+- [ ] Option for simplified visibility cone generation purely from normals (no occlusion) ***[S1]***
+- [ ] Support for different heuristic for "best triangle" to be included in a meshlet ***[S1]***
+- [ ] Sort meshlets by visibility cone angle to render object roughly from outside to inside ***[S0]***
+- [ ] Option to quantize vertex UVs to object bounds (like vertex positions) ***[S1]***
 
 ## License
 
