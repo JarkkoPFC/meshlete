@@ -162,7 +162,7 @@ void rasterizer_tiling::init(const rasterizer_tiling_cfg &cfg_)
       } break;
 
       // unknown
-      default: PFC_ERROR(("Unsupported tiling order\r\n"));
+      default: PFC_ERROR("Unsupported tiling order\r\n");
     }
     if(cfg_.tile_map)
       cfg_.tile_map[tile->x+tile->y*m_tiled_width]=uint16_t(tile-cfg_.tiles);

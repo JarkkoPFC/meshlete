@@ -144,7 +144,7 @@ namespace
       case vtxelemtype_uint32:   return 4;
       case vtxelemtype_float16:  return 2;
       case vtxelemtype_float32:  return 4;
-      default: PFC_ERROR(("Unsupported vertex element type \"%s\"\r\n", enum_string(type_)));
+      default: PFC_ERRORF("Unsupported vertex element type \"%s\"\r\n", enum_string(type_));
     }
     return 0;
   }

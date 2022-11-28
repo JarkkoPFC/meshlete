@@ -143,7 +143,7 @@ void rasterizer::init(const rasterizer_cfg &cfg_, const rasterizer_tiling_cfg &t
     } break;
 
     // unsupported format
-    default: PFC_ERROR(("Unsupported depth format\r\n"));
+    default: PFC_ERROR("Unsupported depth format\r\n");
   }
 
   // clear hi-z
@@ -231,7 +231,7 @@ void rasterizer::commit()
               // float32 depth buffer
               case rtzr_depthfmt_float32: update_hiz<float32_t>(res); break;
               // unsupported format
-              default: PFC_ERROR(("Unsupported depth format\r\n"));
+              default: PFC_ERROR("Unsupported depth format\r\n");
             }
           }
           tile_bounds_min=min(tile_bounds_min, res.tile_min);
@@ -382,7 +382,7 @@ void rasterizer::commit()
         } break;
 
         // unsupported format
-        default: PFC_ERROR(("Unsupported depth format\r\n"));
+        default: PFC_ERROR("Unsupported depth format\r\n");
       }
 
       // clear hi-z
